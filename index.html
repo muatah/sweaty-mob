@@ -23,6 +23,10 @@
 <meta property="og:description" content="Ebooks, guides, programs, and digital tools that turn your screen time into sweat time. Your one-stop shop for gaming fitness.">
 <meta property="og:type" content="website">
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="canonical" href="https://sweatymob.org/">
+<meta property="og:image" content="https://sweatymob.org/assets/hero-bg.jpg">
+<meta property="og:url" content="https://sweatymob.org/">
 <link rel="stylesheet" href="./base.css">
 <link rel="stylesheet" href="./style.css">
 </head>
@@ -53,6 +57,7 @@
         <a href="#coach-mo" class="nav__link">About Mo</a>
         <a href="#kids" class="nav__link">Kids Program</a>
         <a href="#community" class="nav__link">Community</a>
+        <a href="./challenges.html" class="nav__link">Challenges</a>
         <a href="./about.html" class="nav__link">Business</a>
         <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="nav__link nav__link--cta">Shop</a>
       </nav>
@@ -73,6 +78,7 @@
       <a href="#coach-mo" class="mobile-nav__link">About Mo</a>
       <a href="#kids" class="mobile-nav__link">Kids Program</a>
       <a href="#community" class="mobile-nav__link">Community</a>
+      <a href="./challenges.html" class="mobile-nav__link">Challenges</a>
       <a href="./about.html" class="mobile-nav__link">Business</a>
       <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="mobile-nav__link" style="color:var(--color-accent);">Shop →</a>
     </nav>
@@ -83,7 +89,7 @@
     <!-- ========== SECTION 1: HERO ========== -->
     <section class="hero" id="hero">
       <div class="hero__bg">
-        <img src="./assets/hero-bg.png" alt="" width="1920" height="1080" loading="eager">
+        <img src="./assets/hero-bg.jpg" alt="" width="1920" height="1080" loading="eager">
         <div class="hero__overlay"></div>
       </div>
       <div class="hero__content">
@@ -451,7 +457,7 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               X
             </a>
-            <a href="mailto:mgibsonhunter@gmail.com" class="social-link">
+            <a href="mailto:info@sweatymob.org" class="social-link">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               Email
             </a>
@@ -477,7 +483,7 @@
               <li>Measurable improvements in participation and fitness metrics</li>
               <li>Creating a model for schools nationwide</li>
             </ul>
-            <a href="#" class="btn btn--primary">Support the Kids Program</a>
+            <a href="mailto:info@sweatymob.org?subject=Support%20Sweaty%20Mob%20Kids" class="btn btn--primary">Support the Kids Program</a>
           </div>
 
           <div class="kids-section__visual fade-in">
@@ -487,7 +493,7 @@
             <div style="margin-top:var(--space-6);padding-top:var(--space-6);border-top:1px solid var(--color-border);">
               <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;">Every dollar supports equipment, curriculum development, and expanding the program to more schools. The Mob takes care of its youngest members.</p>
               <div style="margin-top:var(--space-4);display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
-                <a href="#" class="btn btn--primary" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">GoFundMe</a>
+                <a href="mailto:info@sweatymob.org?subject=Sweaty%20Mob%20Kids%20Donation" class="btn btn--primary" style="font-size:var(--text-xs);padding:var(--space-2) var(--space-4);">Donate</a>
                 <span style="font-size:var(--text-sm);color:var(--color-text-muted);display:flex;align-items:center;">Cash App: <strong style="color:var(--color-accent);margin-left:var(--space-1);">$Ridewithmo</strong></span>
               </div>
             </div>
@@ -504,7 +510,7 @@
         <p class="talk-section__promise fade-in">Every message gets a reply. That's the Mob promise.</p>
 
         <div class="contact-methods fade-in">
-          <a href="mailto:mgibsonhunter@gmail.com" class="btn btn--primary btn--lg">Email Mo Directly</a>
+          <a href="mailto:info@sweatymob.org" class="btn btn--primary btn--lg">Email Mo Directly</a>
           <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg" style="color:var(--color-dark-text);border-color:var(--color-dark-text-muted);">DM on Instagram</a>
           <a href="https://linktr.ee/ridewithmo" target="_blank" rel="noopener noreferrer" class="btn btn--ghost btn--lg" style="color:var(--color-accent);">All Links →</a>
         </div>
@@ -571,8 +577,9 @@
         <h3 class="footer__heading">Quick Links</h3>
         <ul class="footer__links" role="list">
           <li><a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer">Gumroad Store</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">GoFundMe</a></li>
+          <li><a href="mailto:info@sweatymob.org?subject=Sweaty%20Mob%20Kids%20Donation" target="_blank" rel="noopener noreferrer">Donate</a></li>
           <li><a href="https://linktr.ee/ridewithmo" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+          <li><a href="./challenges.html">Challenges</a></li>
           <li><a href="./about.html">About / Business</a></li>
         </ul>
       </div>
@@ -580,7 +587,7 @@
       <div>
         <h3 class="footer__heading">Support</h3>
         <ul class="footer__links" role="list">
-          <li><a href="mailto:mgibsonhunter@gmail.com">Email Mo</a></li>
+          <li><a href="mailto:info@sweatymob.org">Email Mo</a></li>
           <li>Cash App: <span style="color:var(--color-accent);">$Ridewithmo</span></li>
           <li><a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer">DM on Instagram</a></li>
         </ul>
