@@ -114,33 +114,18 @@
       </div>
     </section>
 
-    <!-- ========== SECTION 2: DAILY CHALLENGE ========== -->
+    <!-- ========== SECTION 2: ACTIVE CHALLENGES (Dynamic) ========== -->
     <section class="section section--light" id="daily">
       <div class="section__inner">
-        <p class="section__eyebrow">Loading Screen Challenge</p>
-        <h2 class="section__title fade-in">TODAY'S CHALLENGE</h2>
+        <p class="section__eyebrow">Your Active Challenges</p>
+        <h2 class="section__title fade-in">WHAT'S UP RIGHT NOW</h2>
+        <p class="section__subtitle fade-in" style="margin:0 auto;">New challenges rotate automatically — daily, weekly, monthly, and quarterly. Come back every day for a fresh challenge.</p>
 
-        <div class="daily-challenge fade-in">
-          <div class="daily-challenge__header">
-            <span class="daily-challenge__badge">Featured</span>
-            <span class="daily-challenge__difficulty">🔥🔥 Medium</span>
-          </div>
-          <h3 class="daily-challenge__name">The Respawn Rush</h3>
-          <p class="daily-challenge__time">⏱ 2 minutes between rounds</p>
-          <div class="daily-challenge__workout">
-            <div class="daily-challenge__step">10 jump squats</div>
-            <div class="daily-challenge__arrow">→</div>
-            <div class="daily-challenge__step">10 push-ups</div>
-            <div class="daily-challenge__arrow">→</div>
-            <div class="daily-challenge__step">10 high knees (each side)</div>
-            <div class="daily-challenge__arrow">→</div>
-            <div class="daily-challenge__step">30-second plank hold</div>
-          </div>
-          <p class="daily-challenge__note">Rest. Repeat when the next round loads.</p>
-          <div class="daily-challenge__cta-wrap">
-            <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--lg">I Crushed It 💪</a>
-            <p class="daily-challenge__share-text">Screenshot your sweat and tag <strong>@ridewithmo</strong></p>
-          </div>
+        <div class="active-challenges-grid">
+          <div id="daily-challenge" class="active-challenge-slot"></div>
+          <div id="weekly-challenge" class="active-challenge-slot"></div>
+          <div id="thirty-challenge" class="active-challenge-slot"></div>
+          <div id="ninety-challenge" class="active-challenge-slot"></div>
         </div>
       </div>
     </section>
@@ -176,143 +161,29 @@
       </div>
     </section>
 
-    <!-- ========== SECTION 4: CHALLENGE LIBRARY ========== -->
+    <!-- ========== SECTION 4: CHALLENGE LIBRARY (Dynamic) ========== -->
     <section class="section section--light" id="library">
       <div class="section__inner">
         <p class="section__eyebrow">The Vault</p>
         <h2 class="section__title fade-in">CHALLENGE LIBRARY</h2>
-        <p class="section__subtitle fade-in" style="margin:0 auto;">Bookmark your favorites. Try them all. The Mob doesn't skip reps.</p>
+        <p class="section__subtitle fade-in" style="margin:0 auto;">400 challenges. Filtered, searchable, always rotating. The Mob doesn't skip reps.</p>
 
-        <div class="challenge-library-grid">
-
-          <!-- Challenge 1 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--quickie">Loading Screen Quickie</span>
-              <span class="challenge-card__difficulty">🔥</span>
-            </div>
-            <h3 class="challenge-card__name">The Loading Screen Lunge</h3>
-            <p class="challenge-card__desc">20 walking lunges before the match starts.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share The Loading Screen Lunge">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
+        <div class="library-controls fade-in">
+          <div class="filter-bar">
+            <button class="filter-btn filter-btn--active" data-challenge-filter="all">All (400)</button>
+            <button class="filter-btn" data-challenge-filter="daily">Daily (100)</button>
+            <button class="filter-btn" data-challenge-filter="weekly">Weekly (100)</button>
+            <button class="filter-btn" data-challenge-filter="thirty">30-Day (100)</button>
+            <button class="filter-btn" data-challenge-filter="ninety">90-Day (100)</button>
           </div>
-
-          <!-- Challenge 2 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--burner">Round Break Burner</span>
-              <span class="challenge-card__difficulty">🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">Controller Crusher</h3>
-            <p class="challenge-card__desc">15 push-ups, 15 squats, 15 sit-ups. No rest.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share Controller Crusher">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
+          <div class="search-bar">
+            <input type="text" id="challenge-search" placeholder="Search challenges..." class="search-input" aria-label="Search challenges">
           </div>
+          <p class="library-count" id="library-count">400 of 400 challenges</p>
+        </div>
 
-          <!-- Challenge 3 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--burner">Round Break Burner</span>
-              <span class="challenge-card__difficulty">🔥🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">The Rage Quit Reset</h3>
-            <p class="challenge-card__desc">Died in-game? 30 jumping jacks, 20 mountain climbers, 10 burpees.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share The Rage Quit Reset">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
-          <!-- Challenge 4 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--quickie">Loading Screen Quickie</span>
-              <span class="challenge-card__difficulty">🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">Queue Time Quad Burn</h3>
-            <p class="challenge-card__desc">Wall sit for the entire matchmaking queue.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share Queue Time Quad Burn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
-          <!-- Challenge 5 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--boss">Boss Battle</span>
-              <span class="challenge-card__difficulty">🔥🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">The AFK Attack</h3>
-            <p class="challenge-card__desc">Going AFK? Full 10-minute HIIT: 40s on, 20s rest, rotate through squats/push-ups/high-knees/plank.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share The AFK Attack">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
-          <!-- Challenge 6 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--quickie">Loading Screen Quickie</span>
-              <span class="challenge-card__difficulty">🔥</span>
-            </div>
-            <h3 class="challenge-card__name">Lobby Stretches</h3>
-            <p class="challenge-card__desc">Full body stretch routine while waiting in the lobby. Neck, shoulders, wrists, hip flexors, hamstrings.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share Lobby Stretches">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
-          <!-- Challenge 7 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--burner">Round Break Burner</span>
-              <span class="challenge-card__difficulty">🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">The Victory Lap</h3>
-            <p class="challenge-card__desc">Won a match? Celebrate with 1 minute of burpees. Lost? Do 2 minutes.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share The Victory Lap">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
-          <!-- Challenge 8 -->
-          <div class="challenge-card fade-in">
-            <div class="challenge-card__top">
-              <span class="challenge-card__tag challenge-card__tag--mob">Mob Challenge</span>
-              <span class="challenge-card__difficulty">🔥🔥</span>
-            </div>
-            <h3 class="challenge-card__name">Squad Goals</h3>
-            <p class="challenge-card__desc">Everyone on voice chat does 20 squats together. Last one to finish does 10 extra.</p>
-            <div class="challenge-card__footer">
-              <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share Squad Goals">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
-                Share
-              </a>
-            </div>
-          </div>
-
+        <div class="challenge-library-grid" id="library-grid">
+          <!-- Populated by challenges-engine.js -->
         </div>
       </div>
     </section>
@@ -420,6 +291,8 @@
     </div>
   </footer>
 
+  <script src="./challenges-data.js"></script>
+  <script src="./challenges-engine.js"></script>
   <script src="./app.js" defer></script>
 </body>
 </html>
