@@ -179,4 +179,44 @@
       }
     });
   });
+
+  /* ========================
+     ENTRY POPUP
+     Shows once per session on page load.
+     Respects sessionStorage so it only shows once per visit.
+     ======================== */
+  var popup = document.getElementById("entryPopup");
+  var popupClose = document.getElementById("popupClose");
+  var popupSkip = document.getElementById("popupSkip");
+  var popupBackdrop = document.getElementById("popupBackdrop");
+  var popupCta = document.getElementById("popupCta");
+
+  function closePopup() {
+    if (popup) {
+      popup.classList.remove("active");
+      document.body.style.overflow = "";
+      sessionStorage.setItem("sm_popup_seen", "1");
+    }
+  }
+
+  if (popup && !sessionStorage.getItem("sm_popup_seen")) {
+    // Show popup after a brief delay (800ms) to let the page render
+    setTimeout(function () {
+      popup.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }, 800);
+
+    if (popupClose) popupClose.addEventListener("click", closePopup);
+    if (popupSkip) popupSkip.addEventListener("click", closePopup);
+    if (popupBackdrop) popupBackdrop.addEventListener("click", closePopup);
+    if (popupCta) popupCta.addEventListener("click", function () {
+      closePopup();
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closePopup();
+    });
+  }
+
 })();

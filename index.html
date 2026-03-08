@@ -17,10 +17,10 @@
 <link rel="author" href="https://www.perplexity.ai/computer">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sweaty Mob — Gaming × Fitness Fusion</title>
-<meta name="description" content="Sweaty Mob is a gaming × fitness fusion brand. Ebooks, guides, programs, and digital tools that turn your screen time into sweat time. Join 8,000+ Mob Members.">
-<meta property="og:title" content="Sweaty Mob — Gaming × Fitness Fusion">
-<meta property="og:description" content="Ebooks, guides, programs, and digital tools that turn your screen time into sweat time. Your one-stop shop for gaming fitness.">
+<title>Sweaty Mob — Workouts for Gamers | Exergaming Guides & Programs</title>
+<meta name="description" content="Turn your screen time into sweat time. Sweaty Mob offers exergaming ebooks, gamer workout programs, and fitness challenges designed for people who'd rather game than go to the gym. Join 8,000+ members.">
+<meta property="og:title" content="Sweaty Mob — Workouts for Gamers | Exergaming Guides & Programs">
+<meta property="og:description" content="Exergaming ebooks, gamer workout programs, and loading screen fitness challenges. Turn your gaming sessions into real workouts. Join 8,000+ Mob members.">
 <meta property="og:type" content="website">
 <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="./assets/favicon.png">
@@ -29,8 +29,52 @@
 <meta property="og:url" content="https://sweatymob.org/">
 <link rel="stylesheet" href="./base.css">
 <link rel="stylesheet" href="./style.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sweaty Mob",
+  "url": "https://sweatymob.org",
+  "logo": "https://sweatymob.org/assets/favicon.png",
+  "description": "Sweaty Mob turns gaming into real workouts. Exergaming ebooks, fitness programs for gamers, school PE curriculum, and certification programs.",
+  "founder": {
+    "@type": "Person",
+    "name": "Mo Rider",
+    "sameAs": ["https://instagram.com/ridewithmo", "https://tiktok.com/@ridewithmo", "https://youtube.com/@ridewithmo", "https://x.com/ridewithmo"]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@sweatymob.org",
+    "contactType": "customer service"
+  },
+  "sameAs": [
+    "https://instagram.com/ridewithmo",
+    "https://tiktok.com/@ridewithmo",
+    "https://youtube.com/@ridewithmo",
+    "https://facebook.com/ridewithmo",
+    "https://x.com/ridewithmo"
+  ]
+}
+</script>
 </head>
 <body>
+
+  <!-- ========== ENTRY POPUP ========== -->
+  <div class="entry-popup" id="entryPopup" role="dialog" aria-modal="true" aria-label="Welcome offer">
+    <div class="entry-popup__backdrop" id="popupBackdrop"></div>
+    <div class="entry-popup__card">
+      <button class="entry-popup__close" id="popupClose" aria-label="Close popup">&times;</button>
+      <div class="entry-popup__icon">&#127918;</div>
+      <h2 class="entry-popup__title">Yo &mdash; Before You Browse</h2>
+      <p class="entry-popup__desc">Grab the <strong>free Loading Screen Challenge Card</strong> &mdash; 5 quick workouts you can crush between rounds. No equipment. No excuses.</p>
+      <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary entry-popup__cta" id="popupCta">Download It Free</a>
+      <p class="entry-popup__sub">Join 8,000+ gamers who stopped sitting through loading screens.</p>
+      <button class="entry-popup__skip" id="popupSkip">Nah, I'll just browse</button>
+    </div>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- ========== HEADER ========== -->
@@ -93,14 +137,14 @@
         <div class="hero__overlay"></div>
       </div>
       <div class="hero__content">
-        <p class="hero__eyebrow">The Sweaty Mob Presents</p>
-        <h1 class="hero__title">GAMING <span class="highlight">×</span> FITNESS FUSION</h1>
-        <p class="hero__desc">Ebooks, guides, programs, and digital tools that turn your screen time into sweat time. Your one-stop shop for gaming fitness. Level up your health while you level up your game.</p>
+        <p class="hero__eyebrow">Stop Sitting. Start Sweating.</p>
+        <h1 class="hero__title">YOUR GAME. YOUR <span class="highlight">WORKOUT.</span></h1>
+        <p class="hero__desc">You already spend hours gaming. What if those sessions made you stronger, faster, and healthier? Sweaty Mob turns the games you love into real workouts — no gym required.</p>
         <div class="hero__ctas">
-          <a href="#library" class="btn btn--primary btn--lg">Browse the Library</a>
-          <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg" style="color:var(--color-dark-text);border-color:var(--color-dark-text-muted);">Free Chapter →</a>
+          <a href="#library" class="btn btn--primary btn--lg">Explore Gamer Workouts</a>
+          <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn--lg" style="color:var(--color-dark-text);border-color:var(--color-dark-text-muted);">Try a Free Chapter →</a>
         </div>
-        <p class="hero__stat">Join <strong>8,000+</strong> Mob Members</p>
+        <p class="hero__stat">Trusted by <strong>8,000+</strong> gamers worldwide</p>
       </div>
     </section>
 
@@ -109,46 +153,46 @@
       <div class="stats-bar__inner">
         <div class="stat-item fade-in">
           <div class="stat-item__value" data-count="222">222%</div>
-          <div class="stat-item__label">More Energy</div>
+          <div class="stat-item__label">More Energy During Active Gaming</div>
         </div>
         <div class="stat-item fade-in">
           <div class="stat-item__value" data-count="64">64%</div>
-          <div class="stat-item__label">Higher Heart Rate</div>
+          <div class="stat-item__label">Higher Heart Rate vs. Sitting</div>
         </div>
         <div class="stat-item fade-in">
           <div class="stat-item__value" data-count="35">35%</div>
-          <div class="stat-item__label">Better Retention</div>
+          <div class="stat-item__label">Better Learning Retention</div>
         </div>
         <div class="stat-item fade-in">
           <div class="stat-item__value">8,000+</div>
-          <div class="stat-item__label">Mob Members</div>
+          <div class="stat-item__label">Active Mob Members</div>
         </div>
       </div>
     </section>
 
-    <!-- ========== SECTION 3: VALUE-FIRST ========== -->
-    <section class="section section--light value-first" id="value-first">
+    <!-- ========== SECTION 3: WHY EXERGAMING ========== -->
+    <section class="section section--light" id="why-exergaming">
       <div class="section__inner">
-        <p class="section__eyebrow">The Thank You Economy</p>
-        <h2 class="section__title fade-in">START FREE. LEVEL UP WHEN READY.</h2>
-        <p class="section__subtitle fade-in" style="margin:0 auto;">We give first. That's the Mob way. Grab a free chapter, try the workouts, feel the difference — then decide if you want more.</p>
+        <p class="section__eyebrow">Why Exergaming Works</p>
+        <h2 class="section__title fade-in">YOU DON'T NEED A GYM. YOU NEED A CONTROLLER.</h2>
+        <p class="section__subtitle fade-in" style="margin:0 auto;">Exergaming means turning the games you already play into legit workouts. The research backs it up &mdash; and so do 8,000+ Mob members who stopped choosing between gaming and fitness.</p>
 
         <div class="value-first__grid">
           <div class="value-card fade-in">
-            <div class="value-card__icon">🎮</div>
+            <div class="value-card__icon">&#127918;</div>
             <h3 class="value-card__title">What is Exergaming?</h3>
-            <p class="value-card__desc">Exercise + Gaming = Exergaming. It's turning the games you already love into genuine workouts. No gym membership required. Just your controller and the will to move.</p>
+            <p class="value-card__desc">Exercise + Gaming = Exergaming. Pair movement with the games you already love and your body doesn't know the difference between "playing" and "training." No gym required. Just your controller.</p>
           </div>
           <div class="value-card fade-in">
-            <div class="value-card__icon">📖</div>
-            <h3 class="value-card__title">Free Chapter Download</h3>
-            <p class="value-card__desc">Get a taste of the Sweaty Mob method before spending a dime. Real workouts, real science, real results. No strings attached.</p>
+            <div class="value-card__icon">&#128214;</div>
+            <h3 class="value-card__title">Try It Free</h3>
+            <p class="value-card__desc">Grab a free chapter of our best-selling exergaming guide. Real workouts, real science, zero commitment. See what the Mob is about before you spend a dime.</p>
             <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:var(--space-4);">Download Free Chapter</a>
           </div>
           <div class="value-card fade-in">
-            <div class="value-card__icon">💪</div>
-            <h3 class="value-card__title">Research-Backed Results</h3>
-            <p class="value-card__desc">222% more energy expenditure. 64% higher heart rates. 35% better knowledge retention. This isn't hype — it's science.</p>
+            <div class="value-card__icon">&#128170;</div>
+            <h3 class="value-card__title">Backed by Research</h3>
+            <p class="value-card__desc">Exergaming produces 222% more energy expenditure, 64% higher heart rates, and 35% better knowledge retention than sitting still. Not hype &mdash; peer-reviewed science.</p>
           </div>
         </div>
       </div>
@@ -158,8 +202,8 @@
     <section class="section section--dark" id="library">
       <div class="section__inner">
         <p class="section__eyebrow">The Library</p>
-        <h2 class="section__title fade-in">10 Ebooks. One Mission. Level Up Everything.</h2>
-        <p class="section__subtitle fade-in" style="color:var(--color-dark-text-muted);">Every title is built on real research, tested by real gamers, and designed to fit into your gaming sessions — not replace them.</p>
+        <h2 class="section__title fade-in">Exergaming Guides That Actually Get You Moving</h2>
+        <p class="section__subtitle fade-in" style="color:var(--color-dark-text-muted);">Every guide is built on real research, road-tested by real gamers, and designed to fit around your gaming sessions &mdash; not replace them. Pick one or grab them all.</p>
 
         <div class="library__grid">
           <!-- Book 1 -->
@@ -330,8 +374,8 @@
     <section class="section section--light" id="bundles">
       <div class="section__inner">
         <p class="section__eyebrow text-center">Power-Up Packs</p>
-        <h2 class="section__title text-center fade-in">Grab a Bundle. Save Big.</h2>
-        <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;">Why buy one when you can stock up? Every bundle is built with a purpose — grab the pack that matches your mission.</p>
+        <h2 class="section__title text-center fade-in">Bundle Up. Save More. Move More.</h2>
+        <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;">Each bundle is built around a specific goal. Whether you're just starting out or going all-in, there's a pack that matches where you are right now.</p>
 
         <div class="bundles__grid">
           <!-- Full Library -->
@@ -382,8 +426,8 @@
     <section class="section section--dark" id="certifications">
       <div class="section__inner">
         <p class="section__eyebrow text-center">Level Up Your Career</p>
-        <h2 class="section__title text-center fade-in">Certification Programs</h2>
-        <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;color:var(--color-dark-text-muted);">Become a certified Sweaty Mob leader. Five tiers designed for different environments — from your living room to the classroom.</p>
+        <h2 class="section__title text-center fade-in">Get Certified. Lead the Movement.</h2>
+        <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;color:var(--color-dark-text-muted);">Become a certified exergaming instructor. Five tiers designed for different environments &mdash; from your living room to a full PE classroom. Teach others what gaming fitness can do.</p>
 
         <div class="cert-grid">
           <div class="cert-card fade-in">
@@ -429,12 +473,12 @@
     <section class="section section--light coach-section" id="coach-mo">
       <div class="section__inner">
         <p class="section__eyebrow">Meet Coach Mo</p>
-        <h2 class="section__title fade-in">The Real Person Behind the Brand</h2>
+        <h2 class="section__title fade-in">This Isn't a Faceless Brand. It's Mo.</h2>
 
         <div class="coach-section__content fade-in">
-          <p class="coach-section__quote">"I'm not just selling ebooks. I'm building a movement. Every rep, every round, every Mob member matters."</p>
-          <p class="coach-section__bio">I'm Mo Rider — PE teacher, cycling gamer, and the founder of Sweaty Mob. The name says it all: "sweaty" because real workouts make you sweat, and "mob" because we move as one. I started this because I saw kids and adults glued to screens and thought — what if we made the screen work FOR their health, not against it?</p>
-          <p class="coach-section__bio">What started as an experiment in my PE classes at Sojourner Truth Montessori School in Washington DC became a full-blown movement. 10 ebooks, 5 certification programs, 8,000+ community members, and a school program proving that gaming and fitness aren't opposites — they're the ultimate combo.</p>
+          <p class="coach-section__quote">"I saw kids who loved gaming but hated exercise. Adults glued to screens who couldn't find 15 minutes to move. I thought &mdash; what if the screen worked FOR their health, not against it?"</p>
+          <p class="coach-section__bio">I'm Mo Rider &mdash; PE teacher, cyclist, gamer, and the founder of Sweaty Mob. The name is the mission: "sweaty" because real workouts make you sweat, and "mob" because we move together. What started as an experiment in my PE classroom became something much bigger.</p>
+          <p class="coach-section__bio">Today we've got a full library of exergaming guides, certification programs for educators, a school-based PE program at Sojourner Truth Montessori in DC, and 8,000+ community members who prove every day that gaming and fitness aren't opposites &mdash; they're the ultimate combo. And I still answer every message personally.</p>
 
           <div class="social-links" style="margin-top:var(--space-6);">
             <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="social-link">
@@ -470,12 +514,12 @@
     <section class="section section--offset" id="kids">
       <div class="section__inner">
         <p class="section__eyebrow">Sweaty Mob Kids</p>
-        <h2 class="section__title fade-in">Changing the Game for Kids</h2>
+        <h2 class="section__title fade-in">Getting Kids Off the Couch &mdash; Without Taking Away the Controller</h2>
 
         <div class="kids-section__content">
           <div class="kids-section__text fade-in">
             <h3>Real Impact in Real Classrooms</h3>
-            <p>At Sojourner Truth Montessori School in Washington DC, we're proving that exergaming isn't just for adults. Our PE program integrates gaming with physical education, turning disengaged students into active participants.</p>
+            <p>At Sojourner Truth Montessori School in Washington DC, we proved that the kids who "hate PE" don't hate movement &mdash; they hate being bored. Our exergaming PE curriculum turns the most disengaged students into the most active participants in the building.</p>
             <ul class="impact-list" role="list">
               <li>Engaging students who were previously disengaged from PE</li>
               <li>Integrating technology students love with physical activity</li>
@@ -506,7 +550,7 @@
     <section class="section section--dark talk-section" id="community">
       <div class="section__inner">
         <p class="section__eyebrow">The Mob Promise</p>
-        <h2 class="section__title fade-in">Got Questions? Talk to Mo.</h2>
+        <h2 class="section__title fade-in">Got Questions? Mo Answers. Personally.</h2>
         <p class="talk-section__promise fade-in">Every message gets a reply. That's the Mob promise.</p>
 
         <div class="contact-methods fade-in">
