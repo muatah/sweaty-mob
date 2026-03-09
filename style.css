@@ -663,7 +663,7 @@ a:hover { color: var(--color-accent-hover); }
   border-color: var(--color-accent);
 }
 .ebook-card__badge {
-  display: inline-block;
+  display: block;
   background: var(--color-accent);
   color: var(--color-accent-text);
   font-size: var(--text-xs);
@@ -671,6 +671,7 @@ a:hover { color: var(--color-accent-hover); }
   padding: var(--space-1) var(--space-3);
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  text-align: center;
 }
 .ebook-card__cover {
   height: 260px;
