@@ -1,3 +1,4 @@
+/* global SM_CHALLENGES */
 /* Sweaty Mob — Challenge Rotation Engine
    Deterministic date-based rotation so every visitor sees the same challenges on the same day.
    Daily = rotates every day
@@ -20,7 +21,6 @@
   }
 
   function weeksSinceEpoch() {
-    // Jan 1 2025 is a Wednesday. Count full weeks since then.
     return Math.floor(daysSinceEpoch() / 7);
   }
 
@@ -39,21 +39,6 @@
     return arr[index % arr.length];
   }
 
-  /* ── difficulty helpers ── */
-  function difficultyStars(diff) {
-    if (!diff) return "";
-    var d = diff.toLowerCase();
-    if (d === "easy") return "\uD83D\uDD25";          // 🔥
-    if (d === "medium") return "\uD83D\uDD25\uD83D\uDD25";     // 🔥🔥
-    if (d === "hard") return "\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25"; // 🔥🔥🔥
-    return "";
-  }
-
-  function difficultyLabel(diff) {
-    if (!diff) return "All Levels";
-    return diff.charAt(0).toUpperCase() + diff.slice(1);
-  }
-
   /* ── date display ── */
   function formatDate(date) {
     var months = ["January","February","March","April","May","June",
@@ -67,14 +52,14 @@
 
   function currentWeekRange() {
     var now = new Date();
-    var day = now.getDay(); // 0=Sun
-    var diff = day === 0 ? -6 : 1 - day; // monday
+    var day = now.getDay();
+    var diff = day === 0 ? -6 : 1 - day;
     var monday = new Date(now);
     monday.setDate(now.getDate() + diff);
     var sunday = new Date(monday);
     sunday.setDate(monday.getDate() + 6);
     var months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-    return months[monday.getMonth()] + " " + monday.getDate() + " – " +
+    return months[monday.getMonth()] + " " + monday.getDate() + " \u2013 " +
            months[sunday.getMonth()] + " " + sunday.getDate();
   }
 
@@ -91,22 +76,43 @@
     return "Q" + q + " " + now.getFullYear();
   }
 
-  /* ── render ── */
+  /* ── levels rendering helper ── */
+  function renderLevelsHTML(levels) {
+    if (!levels) return "";
+    var html = '<div class="challenge-levels">';
+    html += '<div class="challenge-levels__row challenge-levels__row--l1">';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l1">1</span>';
+    html += '<span class="challenge-levels__text">' + levels.l1 + '</span>';
+    html += '</div>';
+    html += '<div class="challenge-levels__row challenge-levels__row--l2">';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l2">2</span>';
+    html += '<span class="challenge-levels__text">' + levels.l2 + '</span>';
+    html += '</div>';
+    html += '<div class="challenge-levels__row challenge-levels__row--l3">';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l3">3</span>';
+    html += '<span class="challenge-levels__text">' + levels.l3 + '</span>';
+    html += '</div>';
+    html += '</div>';
+    return html;
+  }
+
+  /* ── render active challenge ── */
   function renderActiveChallenge(containerId, challenge, periodLabel, periodValue, typeLabel) {
     var el = document.getElementById(containerId);
     if (!el || !challenge) return;
 
     var name = challenge.name || "Challenge";
     var cat = challenge.cat || "";
-    var diff = challenge.diff || "";
     var trigger = challenge.trigger || "";
     var time = challenge.time || "";
+    var levels = challenge.levels || null;
+    var image = challenge.image || "";
 
     var html = '<div class="active-challenge fade-in">' +
       '<div class="active-challenge__header">' +
         '<span class="active-challenge__badge">' + typeLabel + '</span>' +
-        (diff ? '<span class="active-challenge__difficulty">' + difficultyStars(diff) + ' ' + difficultyLabel(diff) + '</span>' : '') +
       '</div>' +
+      (image ? '<div class="active-challenge__image-wrap"><img src="' + image + '" alt="' + cat + ' exercise" class="active-challenge__image" loading="lazy"></div>' : '') +
       '<h3 class="active-challenge__name">' + name + '</h3>' +
       '<p class="active-challenge__period">' + periodLabel + ': ' + periodValue + '</p>' +
       '<div class="active-challenge__meta">' +
@@ -114,6 +120,7 @@
         (trigger ? '<span class="active-challenge__tag">' + trigger + '</span>' : '') +
         (time ? '<span class="active-challenge__tag">\u23F1 ' + time + '</span>' : '') +
       '</div>' +
+      renderLevelsHTML(levels) +
       '<div class="active-challenge__cta">' +
         '<button onclick="window.openShareModal(\'' + name.replace(/'/g, "\\'") + '\')" class="btn btn--primary" style="cursor:pointer;">I Crushed It \uD83D\uDCAA</button>' +
         '<p class="active-challenge__share">Screenshot your sweat and tag <strong>@sweatym0b</strong></p>' +
@@ -123,39 +130,67 @@
     el.innerHTML = html;
   }
 
+  /* ── render library cards ── */
   function renderLibraryCards(containerId, challenges, limit) {
     var el = document.getElementById(containerId);
     if (!el || !challenges) return;
 
     var count = Math.min(limit || 12, challenges.length);
-    var startIdx = daysSinceEpoch(); // rotate which cards show each day
+    var startIdx = daysSinceEpoch();
     var html = '';
     var shareIcon = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
 
     for (var i = 0; i < count; i++) {
       var c = challenges[(startIdx + i) % challenges.length];
-      var diff = c.diff || "";
-      var cat = c.cat || "Challenge";
+      var cat = c.cat || c.focus || "Challenge";
       var tagClass = "challenge-card__tag--default";
 
-      // Map categories to tag classes
       var catLower = cat.toLowerCase();
       if (catLower.indexOf("squat") >= 0 || catLower.indexOf("lunge") >= 0 || catLower.indexOf("push") >= 0)
         tagClass = "challenge-card__tag--burner";
-      else if (catLower.indexOf("walk") >= 0 || catLower.indexOf("stretch") >= 0 || catLower.indexOf("yoga") >= 0)
+      else if (catLower.indexOf("walk") >= 0 || catLower.indexOf("stretch") >= 0 || catLower.indexOf("yoga") >= 0 || catLower.indexOf("balance") >= 0 || catLower.indexOf("flex") >= 0)
         tagClass = "challenge-card__tag--quickie";
-      else if (catLower.indexOf("hiit") >= 0 || catLower.indexOf("full") >= 0 || catLower.indexOf("strength") >= 0)
+      else if (catLower.indexOf("hiit") >= 0 || catLower.indexOf("full") >= 0 || catLower.indexOf("strength") >= 0 || catLower.indexOf("burpee") >= 0 || catLower.indexOf("run") >= 0)
         tagClass = "challenge-card__tag--boss";
-      else if (catLower.indexOf("team") >= 0 || catLower.indexOf("community") >= 0 || catLower.indexOf("group") >= 0)
+      else if (catLower.indexOf("team") >= 0 || catLower.indexOf("community") >= 0 || catLower.indexOf("group") >= 0 || catLower.indexOf("general") >= 0)
         tagClass = "challenge-card__tag--mob";
 
+      // Image thumbnail for daily challenges (they have image field)
+      var imageHTML = '';
+      if (c.image) {
+        imageHTML = '<div class="challenge-card__image-wrap"><img src="' + c.image + '" alt="' + cat + '" class="challenge-card__image" loading="lazy"></div>';
+      }
+
+      // Levels for daily challenges
+      var levelsHTML = '';
+      if (c.levels) {
+        levelsHTML = '<div class="challenge-card__levels">' +
+          '<div class="challenge-card__level"><span class="challenge-card__level-badge challenge-card__level-badge--l1">1</span>' + c.levels.l1 + '</div>' +
+          '<div class="challenge-card__level"><span class="challenge-card__level-badge challenge-card__level-badge--l2">2</span>' + c.levels.l2 + '</div>' +
+          '<div class="challenge-card__level"><span class="challenge-card__level-badge challenge-card__level-badge--l3">3</span>' + c.levels.l3 + '</div>' +
+        '</div>';
+      }
+
+      // Time/trigger meta line (only show if available)
+      var metaHTML = '';
+      if (c.time || c.trigger) {
+        metaHTML = '<p class="challenge-card__desc">';
+        if (c.time) metaHTML += '\u23F1 ' + c.time;
+        if (c.time && c.trigger) metaHTML += ' \u00B7 ';
+        if (c.trigger) metaHTML += c.trigger;
+        metaHTML += '</p>';
+      } else if (c.intensity) {
+        metaHTML = '<p class="challenge-card__desc">\uD83D\uDD25 ' + c.intensity + ' Intensity</p>';
+      }
+
       html += '<div class="challenge-card fade-in">' +
+        imageHTML +
         '<div class="challenge-card__top">' +
           '<span class="challenge-card__tag ' + tagClass + '">' + cat + '</span>' +
-          (diff ? '<span class="challenge-card__difficulty">' + difficultyStars(diff) + '</span>' : '') +
         '</div>' +
         '<h3 class="challenge-card__name">' + c.name + '</h3>' +
-        (c.time ? '<p class="challenge-card__desc">\u23F1 ' + c.time + (c.trigger ? ' \u00B7 ' + c.trigger : '') + '</p>' : '') +
+        metaHTML +
+        levelsHTML +
         '<div class="challenge-card__footer">' +
           '<button onclick="window.openShareModal(\'' + c.name.replace(/'/g, "\\'") + '\')" class="challenge-card__share" aria-label="Share ' + c.name + '" style="cursor:pointer;background:none;border:none;">' +
             shareIcon + ' Share' +
@@ -166,11 +201,6 @@
 
     el.innerHTML = html;
 
-    // Re-trigger scroll animations on new cards
-    if (typeof ScrollReveal !== "undefined") {
-      // If using a scroll reveal library, re-init
-    }
-    // Manual fade-in for freshly injected cards
     var cards = el.querySelectorAll(".fade-in");
     for (var j = 0; j < cards.length; j++) {
       cards[j].classList.add("is-visible");
@@ -197,18 +227,17 @@
     function getFiltered() {
       var filtered = allChallenges;
 
-      // Filter by type
       if (currentFilter === "daily") filtered = SM_CHALLENGES.daily;
       else if (currentFilter === "weekly") filtered = SM_CHALLENGES.weekly;
       else if (currentFilter === "thirty") filtered = SM_CHALLENGES.thirty;
       else if (currentFilter === "ninety") filtered = SM_CHALLENGES.ninety;
 
-      // Filter by search
       if (currentSearch) {
         var q = currentSearch.toLowerCase();
         filtered = filtered.filter(function (c) {
           return (c.name && c.name.toLowerCase().indexOf(q) >= 0) ||
-                 (c.cat && c.cat.toLowerCase().indexOf(q) >= 0);
+                 (c.cat && c.cat.toLowerCase().indexOf(q) >= 0) ||
+                 (c.focus && c.focus.toLowerCase().indexOf(q) >= 0);
         });
       }
 
@@ -219,16 +248,13 @@
       var filtered = getFiltered();
       renderLibraryCards("library-grid", filtered, 24);
 
-      // Update count
       var countEl = document.getElementById("library-count");
       if (countEl) countEl.textContent = filtered.length + " of " + allChallenges.length + " challenges";
     }
 
-    // Filter buttons
     for (var i = 0; i < filterBtns.length; i++) {
-      filterBtns[i].addEventListener("click", function (e) {
+      filterBtns[i].addEventListener("click", function () {
         currentFilter = this.getAttribute("data-challenge-filter");
-        // Update active class
         for (var j = 0; j < filterBtns.length; j++) {
           filterBtns[j].classList.remove("filter-btn--active");
         }
@@ -237,7 +263,6 @@
       });
     }
 
-    // Search
     if (searchInput) {
       var debounceTimer;
       searchInput.addEventListener("input", function () {

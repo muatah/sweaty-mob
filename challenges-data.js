@@ -1,709 +1,1209 @@
 /* Sweaty Mob Challenge Database — 400 Challenges */
-/* Auto-generated from the master spreadsheet */
+/* Updated: Daily challenges with difficulty levels + instructional images */
 
 var SM_CHALLENGES = {
   daily: [
   {
-    "name": "Do 10 squats every time you lose a match",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk during every matchmaking queue today",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "50 jumping jacks before your first game",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "1 minute plank before turning on your console",
-    "cat": "Planks",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "1 min"
-  },
-  {
-    "name": "100 total squats throughout the day",
-    "cat": "Squats",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Walk 1 mile while watching gaming content",
-    "cat": "Walking",
-    "diff": "Medium",
-    "trigger": "During Activity",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Pushups every respawn",
+    "name": "Pregame Push Ups",
     "cat": "Pushups",
-    "diff": "Hard",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "20 lunges between matches",
-    "cat": "Lunges",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "10 pushups after every victory",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Stretch during every loading screen",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "5 burpees every time you die in game",
-    "cat": "Burpees",
-    "diff": "Hard",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "2 minutes jump rope before gaming",
-    "cat": "Jump Rope",
-    "diff": "Medium",
     "trigger": "Pre/Post Gaming",
-    "time": "2 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 sets of 5 reps",
+      "l2": "5 sets of 10 reps",
+      "l3": "10 sets of 20 reps"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "Hold a wall sit during matchmaking",
-    "cat": "Wall Sit",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk during every YouTube ad",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "During Activity",
-    "time": "2-5 min"
-  },
-  {
-    "name": "30 pushups before bed",
+    "name": "Victory Push Ups",
     "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 per win",
+      "l2": "10 per win",
+      "l3": "20 per win"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "1 minute balance hold each leg",
-    "cat": "Balance",
-    "diff": "Easy",
+    "name": "Defeat Drop Set",
+    "cat": "Pushups",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 per loss",
+      "l2": "8 per loss",
+      "l3": "15 per loss"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Respawn Reps",
+    "cat": "Pushups",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 per respawn",
+      "l2": "5 per respawn",
+      "l3": "10 per respawn"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Lobby Push Ups",
+    "cat": "Pushups",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 per lobby wait",
+      "l2": "10 per lobby wait",
+      "l3": "Max reps each lobby"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Install Day Grind",
+    "cat": "Pushups",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 sets of 5 during downloads",
+      "l2": "3 sets of 10 during downloads",
+      "l3": "5 sets of 15 during downloads"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Ranked Reward Reps",
+    "cat": "Pushups",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 after each ranked match",
+      "l2": "10 after each ranked match",
+      "l3": "20 after each ranked match"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Phone Tax Push Ups",
+    "cat": "Pushups",
     "trigger": "Anytime",
-    "time": "2 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 per phone check",
+      "l2": "5 per phone check",
+      "l3": "10 per phone check"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "5 pushups every time you check your phone",
+    "name": "Daily Push Up Goal",
     "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "100 jumping jacks total today",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
     "trigger": "Daily Total",
-    "time": "15-30 min"
+    "time": "10-20 min",
+    "levels": {
+      "l1": "25 total today",
+      "l2": "50 total today",
+      "l3": "100 total today"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "Core workout before your first match",
-    "cat": "Core",
-    "diff": "Medium",
+    "name": "Bedtime Push Ups",
+    "cat": "Pushups",
     "trigger": "Pre/Post Gaming",
-    "time": "5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 sets of 5",
+      "l2": "3 sets of 10",
+      "l3": "3 sets of 20"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "Stretch your back every hour of gaming",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "20 air squats before snacks",
-    "cat": "Squats",
-    "diff": "Medium",
+    "name": "Controller Tax",
+    "cat": "Pushups",
     "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 before picking up controller",
+      "l2": "10 before picking up controller",
+      "l3": "20 before picking up controller"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "10 burpees every hour",
-    "cat": "Burpees",
-    "diff": "Hard",
+    "name": "Game Over Push Ups",
+    "cat": "Pushups",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 when you log off",
+      "l2": "15 when you log off",
+      "l3": "30 when you log off"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Death Drop Push Ups",
+    "cat": "Pushups",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 per death",
+      "l2": "7 per death",
+      "l3": "12 per death"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Hourly Push Up Alarm",
+    "cat": "Pushups",
     "trigger": "Timed Interval",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 every hour",
+      "l2": "10 every hour",
+      "l3": "20 every hour"
+    },
+    "image": "assets/challenges/pushups.png"
   },
   {
-    "name": "Walk while watching a gaming stream",
+    "name": "Wide Grip Power Set",
+    "cat": "Pushups",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "2 sets of 5 wide grip",
+      "l2": "3 sets of 8 wide grip",
+      "l3": "4 sets of 12 wide grip"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Diamond Push Up Challenge",
+    "cat": "Pushups",
+    "trigger": "Daily Total",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "3 sets of 3 diamond push ups",
+      "l2": "3 sets of 8 diamond push ups",
+      "l3": "5 sets of 12 diamond push ups"
+    },
+    "image": "assets/challenges/pushups.png"
+  },
+  {
+    "name": "Queue Walk",
     "cat": "Walking",
-    "diff": "Easy",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Walk in place each queue",
+      "l2": "Walk around the room each queue",
+      "l3": "Walk outside each queue"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Stream & Stride",
+    "cat": "Walking",
     "trigger": "During Activity",
-    "time": "15-30 min"
+    "time": "15-30 min",
+    "levels": {
+      "l1": "10 min walk while watching streams",
+      "l2": "20 min walk while watching streams",
+      "l3": "30 min walk while watching streams"
+    },
+    "image": "assets/challenges/walking.png"
   },
   {
-    "name": "3 planks today",
-    "cat": "Planks",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "5 min"
-  },
-  {
-    "name": "Pushups after every ranked match",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "10 lunges every time you reload a game",
-    "cat": "Lunges",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "2 minute jog before gaming",
-    "cat": "Running",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2 min"
-  },
-  {
-    "name": "5 pushups every time you lose",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk the block after every hour of gaming",
+    "name": "Content Walk",
     "cat": "Walking",
-    "diff": "Medium",
-    "trigger": "Timed Interval",
-    "time": "10 min"
+    "trigger": "During Activity",
+    "time": "15-30 min",
+    "levels": {
+      "l1": "Walk 10 min during gaming content",
+      "l2": "Walk 20 min during gaming content",
+      "l3": "Walk 1 mile during gaming content"
+    },
+    "image": "assets/challenges/walking.png"
   },
   {
-    "name": "Jump rope during download updates",
+    "name": "Ad Break Walk",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Walk in place during ads",
+      "l2": "Walk the room during ads",
+      "l3": "Walk the house during ads"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Scroll & Stroll",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "5 min walk during scroll breaks",
+      "l2": "10 min walk during scroll breaks",
+      "l3": "15 min walk during scroll breaks"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Podcast Pacer",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "15-30 min",
+    "levels": {
+      "l1": "Walk 10 min while listening",
+      "l2": "Walk 20 min while listening",
+      "l3": "Walk 30 min while listening"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Discord Dash",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "5-15 min",
+    "levels": {
+      "l1": "Walk 5 min during voice calls",
+      "l2": "Walk 10 min during voice calls",
+      "l3": "Walk 15 min during voice calls"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Replay Walk",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "Walk 5 min while watching replays",
+      "l2": "Walk 10 min while watching replays",
+      "l3": "Walk 15 min while watching replays"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Hourly Block Walk",
+    "cat": "Walking",
+    "trigger": "Timed Interval",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "5 min walk every hour",
+      "l2": "Walk around the block every hour",
+      "l3": "10 min brisk walk every hour"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Bedtime Wind Down Walk",
+    "cat": "Walking",
+    "trigger": "Pre/Post Gaming",
+    "time": "10-15 min",
+    "levels": {
+      "l1": "5 min walk before bed",
+      "l2": "10 min walk before bed",
+      "l3": "15 min walk before bed"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Post-Session Cool Down Walk",
+    "cat": "Walking",
+    "trigger": "Pre/Post Gaming",
+    "time": "10-15 min",
+    "levels": {
+      "l1": "5 min walk after gaming",
+      "l2": "10 min walk after gaming",
+      "l3": "15 min walk outside after gaming"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Daily Step Goal",
+    "cat": "Walking",
+    "trigger": "Daily Total",
+    "time": "15-30 min",
+    "levels": {
+      "l1": "1,000 steps today",
+      "l2": "2,000 steps today",
+      "l3": "4,000 steps today"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Mile Marker Challenge",
+    "cat": "Walking",
+    "trigger": "Daily Total",
+    "time": "15-30 min",
+    "levels": {
+      "l1": "Walk half a mile today",
+      "l2": "Walk 1 mile today",
+      "l3": "Walk 2 miles today"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Pregame Power Walk",
+    "cat": "Walking",
+    "trigger": "Pre/Post Gaming",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "5 min walk before gaming",
+      "l2": "10 min brisk walk before gaming",
+      "l3": "15 min power walk before gaming"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Walk & Talk Challenge",
+    "cat": "Walking",
+    "trigger": "During Activity",
+    "time": "10-15 min",
+    "levels": {
+      "l1": "Walk 5 min during any phone call",
+      "l2": "Walk 10 min during any phone call",
+      "l3": "Walk 15 min during any phone call"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Lunchtime Lap",
+    "cat": "Walking",
+    "trigger": "Daily Total",
+    "time": "10-20 min",
+    "levels": {
+      "l1": "5 min walk at lunch",
+      "l2": "10 min walk at lunch",
+      "l3": "20 min walk at lunch"
+    },
+    "image": "assets/challenges/walking.png"
+  },
+  {
+    "name": "Loading Screen Stretch",
+    "cat": "Stretching",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec full body stretch per load",
+      "l2": "1 min full body stretch per load",
+      "l3": "2 min deep stretch per load"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Gamer Back Reset",
+    "cat": "Stretching",
+    "trigger": "Timed Interval",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec back stretch every hour",
+      "l2": "1 min back stretch every hour",
+      "l3": "2 min back stretch every 30 min"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Hip Opener",
+    "cat": "Stretching",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "Hold hip stretch 20 sec each side",
+      "l2": "Hold hip stretch 30 sec each side",
+      "l3": "Hold hip stretch 45 sec each side x 2"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Wrist Recovery",
+    "cat": "Stretching",
+    "trigger": "Timed Interval",
+    "time": "2-3 min",
+    "levels": {
+      "l1": "30 sec wrist circles every hour",
+      "l2": "1 min wrist stretches every hour",
+      "l3": "2 min wrist & forearm stretches every 30 min"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Pregame Mobility Flow",
+    "cat": "Stretching",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "2 min light mobility warmup",
+      "l2": "4 min full body mobility flow",
+      "l3": "6 min dynamic warmup routine"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Shoulder Release",
+    "cat": "Stretching",
+    "trigger": "Timed Interval",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "20 sec shoulder rolls every hour",
+      "l2": "1 min shoulder stretch every hour",
+      "l3": "2 min shoulder & chest stretch every 30 min"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Neck Reset",
+    "cat": "Stretching",
+    "trigger": "Timed Interval",
+    "time": "2-3 min",
+    "levels": {
+      "l1": "20 sec neck rolls every hour",
+      "l2": "1 min neck stretches every 30 min",
+      "l3": "2 min neck & trap release every 30 min"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Hamstring Helper",
+    "cat": "Stretching",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "20 sec hamstring stretch per queue",
+      "l2": "30 sec each leg per queue",
+      "l3": "45 sec each leg per queue"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Queue Mobility Drill",
+    "cat": "Stretching",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Arm circles during each queue",
+      "l2": "Arm circles + leg swings per queue",
+      "l3": "Full dynamic stretch per queue"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Calf Stretch Session",
+    "cat": "Stretching",
+    "trigger": "Daily Total",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "20 sec each calf, once today",
+      "l2": "30 sec each calf, twice today",
+      "l3": "45 sec each calf, three times today"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Spine Unwind",
+    "cat": "Stretching",
+    "trigger": "Daily Total",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "30 sec seated spinal twist each side",
+      "l2": "1 min spinal twist + cat-cow stretch",
+      "l3": "2 min full spinal mobility routine"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Bedtime Stretch Routine",
+    "cat": "Stretching",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "2 min gentle full body stretch",
+      "l2": "4 min relaxation stretch routine",
+      "l3": "6 min deep stretch & breathing"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Post-Session Cooldown Stretch",
+    "cat": "Stretching",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "2 min post-gaming stretch",
+      "l2": "4 min full body cooldown",
+      "l3": "6 min deep tissue stretch routine"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Hip & Shoulder Combo",
+    "cat": "Stretching",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "20 sec each stretch, 4 stretches",
+      "l2": "30 sec each stretch, 6 stretches",
+      "l3": "45 sec each stretch, 8 stretches"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Stream Break Stretch",
+    "cat": "Stretching",
+    "trigger": "During Activity",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Stand and touch toes during breaks",
+      "l2": "1 min standing stretch during breaks",
+      "l3": "2 min full stretch routine during breaks"
+    },
+    "image": "assets/challenges/stretching.png"
+  },
+  {
+    "name": "Loss Squats",
+    "cat": "Squats",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 per loss",
+      "l2": "10 per loss",
+      "l3": "20 per loss"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Daily Squat Goal",
+    "cat": "Squats",
+    "trigger": "Daily Total",
+    "time": "10-20 min",
+    "levels": {
+      "l1": "25 total today",
+      "l2": "50 total today",
+      "l3": "100 total today"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Snack Tax Squats",
+    "cat": "Squats",
+    "trigger": "Anytime",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 before any snack",
+      "l2": "10 before any snack",
+      "l3": "20 before any snack"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Hourly Squat Drops",
+    "cat": "Squats",
+    "trigger": "Timed Interval",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 every hour",
+      "l2": "10 every hour",
+      "l3": "20 every hour"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Squat Hold Challenge",
+    "cat": "Squats",
+    "trigger": "Daily Total",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Hold 15 sec x 3 sets",
+      "l2": "Hold 30 sec x 3 sets",
+      "l3": "Hold 60 sec x 3 sets"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Social Media Squats",
+    "cat": "Squats",
+    "trigger": "Anytime",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 before opening social apps",
+      "l2": "10 before opening social apps",
+      "l3": "15 before opening social apps"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Pregame Squat Set",
+    "cat": "Squats",
+    "trigger": "Pre/Post Gaming",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "2 sets of 5",
+      "l2": "3 sets of 10",
+      "l3": "4 sets of 15"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Dinner Prep Squats",
+    "cat": "Squats",
+    "trigger": "Daily Total",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "10 before dinner",
+      "l2": "25 before dinner",
+      "l3": "50 before dinner"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Pulse Squat Finisher",
+    "cat": "Squats",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "10 pulse squats after gaming",
+      "l2": "20 pulse squats after gaming",
+      "l3": "3 sets of 15 pulse squats"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Jump Squat Burst",
+    "cat": "Squats",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 jump squats per match end",
+      "l2": "5 jump squats per match end",
+      "l3": "10 jump squats per match end"
+    },
+    "image": "assets/challenges/squats.png"
+  },
+  {
+    "name": "Pregame Jacks",
+    "cat": "Jumping Jacks",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 sets of 10",
+      "l2": "3 sets of 20",
+      "l3": "5 sets of 25"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Daily Jack Goal",
+    "cat": "Jumping Jacks",
+    "trigger": "Daily Total",
+    "time": "10-15 min",
+    "levels": {
+      "l1": "50 total today",
+      "l2": "100 total today",
+      "l3": "200 total today"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Match End Jacks",
+    "cat": "Jumping Jacks",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "10 per match",
+      "l2": "20 per match",
+      "l3": "30 per match"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Loss Jacks",
+    "cat": "Jumping Jacks",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "10 per loss",
+      "l2": "20 per loss",
+      "l3": "30 per loss"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Lobby Jacks",
+    "cat": "Jumping Jacks",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "10 per lobby wait",
+      "l2": "20 per lobby wait",
+      "l3": "30 per lobby wait"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Three Round Jack Attack",
+    "cat": "Jumping Jacks",
+    "trigger": "Daily Total",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "3 rounds of 10",
+      "l2": "3 rounds of 20",
+      "l3": "3 rounds of 35"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Power Jack Intervals",
+    "cat": "Jumping Jacks",
+    "trigger": "Timed Interval",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "15 sec on / 15 sec rest x 3",
+      "l2": "20 sec on / 10 sec rest x 5",
+      "l3": "30 sec on / 10 sec rest x 5"
+    },
+    "image": "assets/challenges/jumping-jacks.png"
+  },
+  {
+    "name": "Pregame Plank",
+    "cat": "Planks",
+    "trigger": "Pre/Post Gaming",
+    "time": "1-3 min",
+    "levels": {
+      "l1": "Hold 15 sec x 2 sets",
+      "l2": "Hold 30 sec x 2 sets",
+      "l3": "Hold 60 sec x 2 sets"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Queue Plank Hold",
+    "cat": "Planks",
+    "trigger": "Loading/Queue",
+    "time": "1-3 min",
+    "levels": {
+      "l1": "Hold 10 sec per queue",
+      "l2": "Hold 20 sec per queue",
+      "l3": "Hold 30+ sec per queue"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Daily Plank Goal",
+    "cat": "Planks",
+    "trigger": "Daily Total",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "Total 30 sec plank time today",
+      "l2": "Total 1 min plank time today",
+      "l3": "Total 3 min plank time today"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Bedtime Plank",
+    "cat": "Planks",
+    "trigger": "Pre/Post Gaming",
+    "time": "1-3 min",
+    "levels": {
+      "l1": "Hold 15 sec before bed",
+      "l2": "Hold 30 sec before bed",
+      "l3": "Hold 60 sec before bed"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Side Plank Switch",
+    "cat": "Planks",
+    "trigger": "Daily Total",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "10 sec each side x 2",
+      "l2": "20 sec each side x 2",
+      "l3": "30 sec each side x 3"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Plank Up-Downs",
+    "cat": "Planks",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 plank up-downs",
+      "l2": "10 plank up-downs",
+      "l3": "3 sets of 8 plank up-downs"
+    },
+    "image": "assets/challenges/planks.png"
+  },
+  {
+    "name": "Lobby Lunges",
+    "cat": "Lunges",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 each leg per lobby",
+      "l2": "10 each leg per lobby",
+      "l3": "15 each leg per lobby"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Pregame Lunges",
+    "cat": "Lunges",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 sets of 5 each leg",
+      "l2": "3 sets of 8 each leg",
+      "l3": "4 sets of 12 each leg"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Ad Break Lunges",
+    "cat": "Lunges",
+    "trigger": "During Activity",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "5 each leg during ads",
+      "l2": "8 each leg during ads",
+      "l3": "12 each leg during ads"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Reload Lunges",
+    "cat": "Lunges",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 each leg per reload",
+      "l2": "5 each leg per reload",
+      "l3": "8 each leg per reload"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Bedtime Lunges",
+    "cat": "Lunges",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 sets of 5 each leg",
+      "l2": "3 sets of 8 each leg",
+      "l3": "3 sets of 12 each leg"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Daily Lunge Goal",
+    "cat": "Lunges",
+    "trigger": "Daily Total",
+    "time": "10-20 min",
+    "levels": {
+      "l1": "20 total today",
+      "l2": "50 total today",
+      "l3": "100 total today"
+    },
+    "image": "assets/challenges/lunges.png"
+  },
+  {
+    "name": "Pregame Jump Rope",
     "cat": "Jump Rope",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "60 seconds squat hold today",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "1 min"
-  },
-  {
-    "name": "Stretch hips before gaming",
-    "cat": "Stretching",
-    "diff": "Easy",
     "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec jump rope",
+      "l2": "1 min jump rope",
+      "l3": "2 min jump rope"
+    },
+    "image": "assets/challenges/jump-rope.png"
   },
   {
-    "name": "Pushups during lobby wait",
-    "cat": "Pushups",
-    "diff": "Medium",
+    "name": "Download Day Rope",
+    "cat": "Jump Rope",
     "trigger": "Loading/Queue",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec during downloads",
+      "l2": "1 min during downloads",
+      "l3": "2 min during downloads"
+    },
+    "image": "assets/challenges/jump-rope.png"
   },
   {
-    "name": "20 squats every hour",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "10 pushups every time you win",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk 10 minutes before bed",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "10 min"
-  },
-  {
-    "name": "Do mobility exercises during loading screens",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "1 mile walk challenge",
-    "cat": "Walking",
-    "diff": "Medium",
+    "name": "Daily Rope Goal",
+    "cat": "Jump Rope",
     "trigger": "Daily Total",
-    "time": "15-30 min"
+    "time": "5-10 min",
+    "levels": {
+      "l1": "Total 2 min rope today",
+      "l2": "Total 5 min rope today",
+      "l3": "Total 8 min rope today"
+    },
+    "image": "assets/challenges/jump-rope.png"
   },
   {
-    "name": "Hold plank during every queue",
-    "cat": "Planks",
-    "diff": "Hard",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "20 jumping jacks every match",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Calf raises during gaming breaks",
-    "cat": "General",
-    "diff": "Easy",
+    "name": "Stream Break Rope",
+    "cat": "Jump Rope",
     "trigger": "During Activity",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec during stream breaks",
+      "l2": "1 min during stream breaks",
+      "l3": "2 min during stream breaks"
+    },
+    "image": "assets/challenges/jump-rope.png"
   },
   {
-    "name": "Run stairs once today",
+    "name": "Update Timer Rope",
+    "cat": "Jump Rope",
+    "trigger": "Loading/Queue",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "30 sec during updates",
+      "l2": "1 min during updates",
+      "l3": "Jump rope entire update timer"
+    },
+    "image": "assets/challenges/jump-rope.png"
+  },
+  {
+    "name": "Rope Interval Blast",
+    "cat": "Jump Rope",
+    "trigger": "Timed Interval",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "15 sec on / 15 sec rest x 4",
+      "l2": "20 sec on / 10 sec rest x 6",
+      "l3": "30 sec on / 10 sec rest x 6"
+    },
+    "image": "assets/challenges/jump-rope.png"
+  },
+  {
+    "name": "Death Burpees",
+    "cat": "Burpees",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 per death",
+      "l2": "3 per death",
+      "l3": "5 per death"
+    },
+    "image": "assets/challenges/burpees.png"
+  },
+  {
+    "name": "Hourly Burpee Alarm",
+    "cat": "Burpees",
+    "trigger": "Timed Interval",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 every hour",
+      "l2": "5 every hour",
+      "l3": "10 every hour"
+    },
+    "image": "assets/challenges/burpees.png"
+  },
+  {
+    "name": "Match End Burpees",
+    "cat": "Burpees",
+    "trigger": "In-Game Event",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "3 after each match",
+      "l2": "5 after each match",
+      "l3": "10 after each match"
+    },
+    "image": "assets/challenges/burpees.png"
+  },
+  {
+    "name": "Burpee Ladder",
+    "cat": "Burpees",
+    "trigger": "Daily Total",
+    "time": "5-10 min",
+    "levels": {
+      "l1": "1-2-3-2-1 ladder (9 total)",
+      "l2": "1-2-3-4-3-2-1 ladder (16 total)",
+      "l3": "1-2-3-4-5-4-3-2-1 ladder (25 total)"
+    },
+    "image": "assets/challenges/burpees.png"
+  },
+  {
+    "name": "Pregame Jog",
     "cat": "Running",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "5 min"
-  },
-  {
-    "name": "Do pushups before touching your controller",
-    "cat": "Pushups",
-    "diff": "Medium",
     "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "1 min light jog in place",
+      "l2": "2 min jog in place or outside",
+      "l3": "5 min outdoor jog"
+    },
+    "image": "assets/challenges/running.png"
   },
   {
-    "name": "Stretch shoulders every hour",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "3 rounds of jumping jacks today",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
+    "name": "Stair Sprint",
+    "cat": "Running",
     "trigger": "Daily Total",
-    "time": "5 min"
+    "time": "3-5 min",
+    "levels": {
+      "l1": "Walk stairs 1 time today",
+      "l2": "Jog stairs 2 times today",
+      "l3": "Sprint stairs 3 times today"
+    },
+    "image": "assets/challenges/running.png"
   },
   {
-    "name": "20 lunges before first game",
-    "cat": "Lunges",
-    "diff": "Medium",
+    "name": "Daily Run Goal",
+    "cat": "Running",
+    "trigger": "Daily Total",
+    "time": "5-15 min",
+    "levels": {
+      "l1": "Jog 2 min total today",
+      "l2": "Jog 5 min total today",
+      "l3": "Run 10 min total today"
+    },
+    "image": "assets/challenges/running.png"
+  },
+  {
+    "name": "High Knee Bursts",
+    "cat": "Running",
     "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "15 sec high knees x 2 sets",
+      "l2": "20 sec high knees x 3 sets",
+      "l3": "30 sec high knees x 4 sets"
+    },
+    "image": "assets/challenges/running.png"
   },
   {
-    "name": "10 pushups every death",
-    "cat": "Pushups",
-    "diff": "Hard",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Balance drill during matchmaking",
-    "cat": "Balance",
-    "diff": "Easy",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk during every TikTok scroll break",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "During Activity",
-    "time": "2-5 min"
-  },
-  {
-    "name": "50 pushups total today",
-    "cat": "Pushups",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Wall sit challenge today",
+    "name": "Queue Wall Sit",
     "cat": "Wall Sit",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Jump rope during YouTube loading",
-    "cat": "Jump Rope",
-    "diff": "Medium",
-    "trigger": "During Activity",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Core workout during streaming breaks",
-    "cat": "Core",
-    "diff": "Medium",
-    "trigger": "During Activity",
-    "time": "5 min"
-  },
-  {
-    "name": "Stretch hamstrings during queue",
-    "cat": "Stretching",
-    "diff": "Easy",
     "trigger": "Loading/Queue",
-    "time": "2-5 min"
+    "time": "1-3 min",
+    "levels": {
+      "l1": "Hold 10 sec per queue",
+      "l2": "Hold 20 sec per queue",
+      "l3": "Hold 30+ sec per queue"
+    },
+    "image": "assets/challenges/wall-sit.png"
   },
   {
-    "name": "Walk 2000 steps while gaming today",
-    "cat": "Walking",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Do squats before checking social media",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Jumping jacks after every loss",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Stretch wrists every hour",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Mobility warmup before gaming",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "5 min"
-  },
-  {
-    "name": "30 pushups before bed",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk during Discord calls",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "During Activity",
-    "time": "10 min"
-  },
-  {
-    "name": "3 minute plank challenge today",
-    "cat": "Planks",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "3 min"
-  },
-  {
-    "name": "100 lunges challenge",
-    "cat": "Lunges",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Jump rope for 5 minutes today",
-    "cat": "Jump Rope",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "5 min"
-  },
-  {
-    "name": "10 burpees after every match",
-    "cat": "Burpees",
-    "diff": "Hard",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Stretch during every loading screen",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Jog around the block today",
-    "cat": "Running",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "10 min"
-  },
-  {
-    "name": "200 jumping jacks today",
-    "cat": "Jumping Jacks",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Pushups during game installs",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Balance challenge before bed",
-    "cat": "Balance",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "5 pushups every phone unlock",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk while listening to gaming podcasts",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "During Activity",
-    "time": "15-30 min"
-  },
-  {
-    "name": "20 squats every hour today",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "1 mile gaming walk challenge",
-    "cat": "Walking",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "15-30 min"
-  },
-  {
-    "name": "Stretch neck every 30 minutes",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Plank during matchmaking",
-    "cat": "Planks",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Run stairs before gaming",
-    "cat": "Running",
-    "diff": "Hard",
-    "trigger": "Pre/Post Gaming",
-    "time": "5 min"
-  },
-  {
-    "name": "50 squats before dinner",
-    "cat": "Squats",
-    "diff": "Hard",
-    "trigger": "Pre/Post Gaming",
-    "time": "5 min"
-  },
-  {
-    "name": "Jump rope during stream breaks",
-    "cat": "Jump Rope",
-    "diff": "Medium",
-    "trigger": "During Activity",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Stretch calves today",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Daily Total",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Do lunges during ads",
-    "cat": "Lunges",
-    "diff": "Medium",
-    "trigger": "During Activity",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Pushups before turning off game",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk while watching replays",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "During Activity",
-    "time": "10 min"
-  },
-  {
-    "name": "2 minute wall sit challenge",
+    "name": "Daily Wall Sit Goal",
     "cat": "Wall Sit",
-    "diff": "Medium",
     "trigger": "Daily Total",
-    "time": "2 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Total 30 sec wall sit today",
+      "l2": "Total 1 min wall sit today",
+      "l3": "Total 2 min wall sit today"
+    },
+    "image": "assets/challenges/wall-sit.png"
   },
   {
-    "name": "Stretch spine today",
-    "cat": "Stretching",
-    "diff": "Easy",
+    "name": "Wall Sit Endurance Test",
+    "cat": "Wall Sit",
     "trigger": "Daily Total",
-    "time": "2-5 min"
+    "time": "2-5 min",
+    "levels": {
+      "l1": "Hold 15 sec x 3 sets",
+      "l2": "Hold 30 sec x 3 sets",
+      "l3": "Hold 45 sec x 3 sets"
+    },
+    "image": "assets/challenges/wall-sit.png"
   },
   {
-    "name": "Squats before snacks",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
+    "name": "Single Leg Balance",
+    "cat": "Balance",
+    "trigger": "Anytime",
+    "time": "2-3 min",
+    "levels": {
+      "l1": "15 sec each leg x 2",
+      "l2": "30 sec each leg x 2",
+      "l3": "60 sec each leg x 2"
+    },
+    "image": "assets/challenges/balance.png"
   },
   {
-    "name": "Jumping jacks during lobby wait",
-    "cat": "Jumping Jacks",
-    "diff": "Medium",
+    "name": "Queue Balance Hold",
+    "cat": "Balance",
     "trigger": "Loading/Queue",
-    "time": "2-5 min"
+    "time": "2-3 min",
+    "levels": {
+      "l1": "10 sec each leg per queue",
+      "l2": "20 sec each leg per queue",
+      "l3": "30 sec each leg per queue"
+    },
+    "image": "assets/challenges/balance.png"
   },
   {
-    "name": "Core challenge before bed",
+    "name": "Bedtime Balance",
+    "cat": "Balance",
+    "trigger": "Pre/Post Gaming",
+    "time": "2-3 min",
+    "levels": {
+      "l1": "15 sec each leg before bed",
+      "l2": "30 sec each leg before bed",
+      "l3": "45 sec each leg, eyes closed"
+    },
+    "image": "assets/challenges/balance.png"
+  },
+  {
+    "name": "Pregame Core Blast",
     "cat": "Core",
-    "diff": "Medium",
     "trigger": "Pre/Post Gaming",
-    "time": "5 min"
+    "time": "3-5 min",
+    "levels": {
+      "l1": "10 crunches + 10 sec plank",
+      "l2": "20 crunches + 20 sec plank",
+      "l3": "30 crunches + 30 sec plank x 2"
+    },
+    "image": "assets/challenges/core.png"
   },
   {
-    "name": "10 pushups after every loss",
-    "cat": "Pushups",
-    "diff": "Medium",
-    "trigger": "In-Game Event",
-    "time": "2-5 min"
+    "name": "Stream Break Core",
+    "cat": "Core",
+    "trigger": "During Activity",
+    "time": "3-5 min",
+    "levels": {
+      "l1": "10 sit ups during breaks",
+      "l2": "20 bicycle crunches during breaks",
+      "l3": "30 mountain climbers + 15 sec plank"
+    },
+    "image": "assets/challenges/core.png"
   },
   {
-    "name": "Walk outside after gaming session",
-    "cat": "Walking",
-    "diff": "Easy",
+    "name": "Bedtime Core Routine",
+    "cat": "Core",
     "trigger": "Pre/Post Gaming",
-    "time": "10 min"
+    "time": "3-5 min",
+    "levels": {
+      "l1": "10 leg raises + 10 sec plank",
+      "l2": "20 leg raises + 20 sec plank",
+      "l3": "30 leg raises + 30 sec plank + 15 crunches"
+    },
+    "image": "assets/challenges/core.png"
   },
   {
-    "name": "Stretch hips tonight",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Mobility drill before gaming",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "5 min"
-  },
-  {
-    "name": "5 burpees every hour",
-    "cat": "Burpees",
-    "diff": "Hard",
-    "trigger": "Timed Interval",
-    "time": "2-5 min"
-  },
-  {
-    "name": "30 lunges before bed",
-    "cat": "Lunges",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "2 mile step challenge today",
-    "cat": "Walking",
-    "diff": "Hard",
-    "trigger": "Daily Total",
-    "time": "30-45 min"
-  },
-  {
-    "name": "Jump rope during updates",
-    "cat": "Jump Rope",
-    "diff": "Medium",
-    "trigger": "Loading/Queue",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Plank before sleep",
-    "cat": "Planks",
-    "diff": "Medium",
-    "trigger": "Pre/Post Gaming",
-    "time": "1 min"
-  },
-  {
-    "name": "Stretch shoulders tonight",
-    "cat": "Stretching",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Squat hold challenge",
-    "cat": "Squats",
-    "diff": "Medium",
-    "trigger": "Daily Total",
-    "time": "2-5 min"
-  },
-  {
-    "name": "Walk for 10 minutes before bed",
-    "cat": "Walking",
-    "diff": "Easy",
-    "trigger": "Pre/Post Gaming",
-    "time": "10 min"
+    "name": "Break Time Calf Raises",
+    "cat": "Calf Raises",
+    "trigger": "During Activity",
+    "time": "2-5 min",
+    "levels": {
+      "l1": "2 sets of 10",
+      "l2": "3 sets of 15",
+      "l3": "4 sets of 20"
+    },
+    "image": "assets/challenges/calf-raises.png"
   }
-],
+  ],
 
   weekly: [
   {
