@@ -65,17 +65,22 @@
 
 .terms-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-6);
   margin-top: var(--space-10);
+}
+@media (max-width: 900px) {
+  .terms-grid { grid-template-columns: 1fr; }
 }
 .term-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-8);
+  padding: var(--space-6);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .term-card::before {
   content: '';
@@ -97,29 +102,32 @@
 }
 .term-card__title {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 700;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 .term-card__desc {
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
-  line-height: 1.7;
+  line-height: 1.65;
   margin-bottom: var(--space-4);
+  flex: 1;
 }
 .term-card__examples {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: auto;
 }
 .term-card__examples li {
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
   border-bottom: 1px solid var(--color-border);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: var(--space-2);
+  line-height: 1.5;
 }
 .term-card__examples li:last-child {
   border-bottom: none;
@@ -281,25 +289,25 @@
           <div class="term-card fade-in">
             <div class="term-card__label">Definition</div>
             <h3 class="term-card__title">Exergaming</h3>
-            <p class="term-card__desc">Games built specifically for physical movement. The gameplay itself requires your body to be the controller. You can't play without moving.</p>
+            <p class="term-card__desc">Games designed so your body is the controller. The movement is the gameplay. You physically cannot play without exercising.</p>
             <ul class="term-card__examples">
-              <li>Ring Fit Adventure (Nintendo Switch)</li>
+              <li>Ring Fit Adventure (Switch)</li>
               <li>Beat Saber (VR)</li>
-              <li>Just Dance (Multi platform)</li>
+              <li>Just Dance (All Platforms)</li>
               <li>Supernatural (Meta Quest)</li>
-              <li>Fitness Boxing (Nintendo Switch)</li>
+              <li>Fitness Boxing (Switch)</li>
             </ul>
           </div>
 
           <div class="term-card fade-in">
             <div class="term-card__label">Definition</div>
             <h3 class="term-card__title">Active Gaming</h3>
-            <p class="term-card__desc">Taking any game and pairing it with physical activity. The game itself doesn't require movement, but you build movement around it. Loading screen pushups, death penalty squats, boss battle burpees.</p>
+            <p class="term-card__desc">Any game paired with physical activity. The game doesn't require movement, but you build it in. Loading screen pushups, death squats, boss battle burpees.</p>
             <ul class="term-card__examples">
-              <li>10 pushups every time you die in Elden Ring</li>
+              <li>10 pushups every death in Elden Ring</li>
               <li>Plank during every loading screen</li>
               <li>Squats between Fortnite matches</li>
-              <li>Walking on a treadmill during story games</li>
+              <li>Treadmill walking during story games</li>
               <li>Stretching between ranked rounds</li>
             </ul>
           </div>
@@ -307,13 +315,13 @@
           <div class="term-card fade-in">
             <div class="term-card__label">Definition</div>
             <h3 class="term-card__title">Fitness Gaming</h3>
-            <p class="term-card__desc">Using game mechanics (points, streaks, leaderboards, levels) to make traditional exercise more engaging. The fitness is the focus. The gaming layer keeps you coming back.</p>
+            <p class="term-card__desc">Game mechanics like points, streaks, and leaderboards layered onto traditional exercise. The workout is the focus. The game keeps you coming back.</p>
             <ul class="term-card__examples">
-              <li>Zwift (cycling + racing game)</li>
-              <li>Peloton leaderboards and achievements</li>
-              <li>Apple Fitness+ with activity rings</li>
-              <li>Strava segments and challenges</li>
-              <li>Wearable step challenges with friends</li>
+              <li>Zwift (Cycling + Racing)</li>
+              <li>Peloton Leaderboards</li>
+              <li>Apple Fitness+ Activity Rings</li>
+              <li>Strava Segments and Challenges</li>
+              <li>Wearable Step Competitions</li>
             </ul>
           </div>
         </div>
