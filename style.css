@@ -613,6 +613,12 @@ a:hover { color: var(--color-accent-hover); }
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.value-card .btn {
+  align-self: flex-start;
+  margin-top: var(--space-4);
 }
 .value-card__icon {
   width: 48px;
@@ -635,6 +641,7 @@ a:hover { color: var(--color-accent-hover); }
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.6;
+  flex: 1;
 }
 
 /* ============================================
