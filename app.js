@@ -182,24 +182,25 @@
 
   /* ========================
      ENTRY POPUP
-     Shows once per session on page load.
-     Respects sessionStorage so it only shows once per visit.
+     Shows once per page load.
+     Uses in-memory flag to track state.
      ======================== */
   var popup = document.getElementById("entryPopup");
   var popupClose = document.getElementById("popupClose");
   var popupSkip = document.getElementById("popupSkip");
   var popupBackdrop = document.getElementById("popupBackdrop");
   var popupCta = document.getElementById("popupCta");
+  var smPopupSeen = window._smPopupSeen || false;
 
   function closePopup() {
     if (popup) {
       popup.classList.remove("active");
       document.body.style.overflow = "";
-      sessionStorage.setItem("sm_popup_seen", "1");
+      window._smPopupSeen = true;
     }
   }
 
-  if (popup && !sessionStorage.getItem("sm_popup_seen")) {
+  if (popup && !smPopupSeen) {
     // Show popup after a brief delay (800ms) to let the page render
     setTimeout(function () {
       popup.classList.add("active");
