@@ -115,8 +115,8 @@
         (time ? '<span class="active-challenge__tag">\u23F1 ' + time + '</span>' : '') +
       '</div>' +
       '<div class="active-challenge__cta">' +
-        '<a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="btn btn--primary">I Crushed It \uD83D\uDCAA</a>' +
-        '<p class="active-challenge__share">Screenshot your sweat and tag <strong>@ridewithmo</strong></p>' +
+        '<button onclick="window.openShareModal(\'' + name.replace(/'/g, "\\'") + '\')" class="btn btn--primary" style="cursor:pointer;">I Crushed It \uD83D\uDCAA</button>' +
+        '<p class="active-challenge__share">Screenshot your sweat and tag <strong>@sweatym0b</strong></p>' +
       '</div>' +
     '</div>';
 
@@ -157,9 +157,9 @@
         '<h3 class="challenge-card__name">' + c.name + '</h3>' +
         (c.time ? '<p class="challenge-card__desc">\u23F1 ' + c.time + (c.trigger ? ' \u00B7 ' + c.trigger : '') + '</p>' : '') +
         '<div class="challenge-card__footer">' +
-          '<a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="challenge-card__share" aria-label="Share ' + c.name + '">' +
+          '<button onclick="window.openShareModal(\'' + c.name.replace(/'/g, "\\'") + '\')" class="challenge-card__share" aria-label="Share ' + c.name + '" style="cursor:pointer;background:none;border:none;">' +
             shareIcon + ' Share' +
-          '</a>' +
+          '</button>' +
         '</div>' +
       '</div>';
     }
