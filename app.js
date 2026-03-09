@@ -37,28 +37,57 @@
   }
 
   /* ========================
-     MOBILE MENU
+     MOBILE MENU — slide-in panel
      ======================== */
   var hamburger = document.querySelector(".hamburger");
-  var mobileNav = document.querySelector(".mobile-nav");
+  var mobileNav = document.getElementById("mobileNav");
+  var mobileBackdrop = document.getElementById("mobileNavBackdrop");
+  var mobileClose = document.getElementById("mobileNavClose");
 
-  if (hamburger && mobileNav) {
+  function openMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.add("open");
+    if (mobileBackdrop) mobileBackdrop.classList.add("visible");
+    if (hamburger) {
+      hamburger.classList.add("active");
+      hamburger.setAttribute("aria-expanded", "true");
+    }
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.remove("open");
+    if (mobileBackdrop) mobileBackdrop.classList.remove("visible");
+    if (hamburger) {
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+    document.body.style.overflow = "";
+  }
+
+  if (hamburger) {
     hamburger.addEventListener("click", function () {
-      var isOpen = hamburger.classList.toggle("active");
-      mobileNav.classList.toggle("open");
-      hamburger.setAttribute("aria-expanded", String(isOpen));
-      document.body.style.overflow = isOpen ? "hidden" : "";
+      var isOpen = mobileNav && mobileNav.classList.contains("open");
+      if (isOpen) { closeMobileNav(); } else { openMobileNav(); }
     });
+  }
 
-    // Close on link click
+  // Close button inside panel
+  if (mobileClose) {
+    mobileClose.addEventListener("click", closeMobileNav);
+  }
+
+  // Backdrop tap to close
+  if (mobileBackdrop) {
+    mobileBackdrop.addEventListener("click", closeMobileNav);
+  }
+
+  // Close on nav link click
+  if (mobileNav) {
     var mobileLinks = mobileNav.querySelectorAll(".mobile-nav__link");
     mobileLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        mobileNav.classList.remove("open");
-        hamburger.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeMobileNav);
     });
   }
 
