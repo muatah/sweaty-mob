@@ -1165,27 +1165,195 @@ a:hover { color: var(--color-accent-hover); }
 }
 
 /* ============================================
-   COACH MO
+   COACH MO — Founder Bio
    ============================================ */
 .coach-section { text-align: center; }
 .coach-section__content {
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
 }
-.coach-section__quote {
+
+/* Origin story lead-in */
+.coach-section__lead {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-weight: 600;
-  font-style: italic;
-  margin-bottom: var(--space-6);
-  color: var(--color-text);
+  font-weight: 700;
   line-height: 1.35;
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
 }
+
+/* Bio paragraphs */
 .coach-section__bio {
   font-size: var(--text-base);
   color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: var(--space-5);
+}
+
+/* Pull quote */
+.coach-section__pullquote {
+  margin: var(--space-8) 0;
+  padding: var(--space-6) var(--space-8);
+  border-left: 4px solid var(--color-accent);
+  text-align: left;
+  background: var(--color-surface-offset, rgba(128,128,128,0.04));
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.coach-section__pullquote p {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Section dividers inside bio */
+.coach-section__origin,
+.coach-section__insight,
+.coach-section__build,
+.coach-section__current {
+  margin-bottom: var(--space-2);
+}
+
+/* Milestone grid */
+.coach-section__milestones {
+  margin: var(--space-8) 0;
+}
+.milestone-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+}
+.milestone-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-5) var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-offset, rgba(128,128,128,0.04));
+  border: 1px solid var(--color-divider);
+}
+.milestone-number {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.milestone-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Promise line */
+.coach-section__promise {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .milestone-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .coach-section__pullquote {
+    padding: var(--space-4) var(--space-5);
+    margin: var(--space-6) 0;
+  }
+  .coach-section__lead {
+    font-size: var(--text-lg);
+  }
+}
+
+/* ============================================
+   CONTACT US SECTION
+   ============================================ */
+.contact-section { text-align: center; }
+.contact-section__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
   line-height: 1.7;
-  margin-bottom: var(--space-6);
+  max-width: 600px;
+  margin: 0 auto var(--space-10);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-8) var(--space-5);
+  border-radius: var(--radius-lg, 16px);
+  background: var(--color-surface-offset, rgba(128,128,128,0.04));
+  border: 1px solid var(--color-divider);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.contact-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(229, 26, 26, 0.08);
+}
+.contact-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: rgba(229, 26, 26, 0.08);
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.contact-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+.contact-card__detail {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+.contact-card__link {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.contact-card__link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 640px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  .contact-card {
+    padding: var(--space-6) var(--space-5);
+  }
 }
 .social-links {
   display: flex;
