@@ -143,53 +143,94 @@
     return "cd-" + _uid;
   }
 
-  /* ── build 3-4 bullet points from challenge data ── */
+  /* ── alternative exercises by category / muscle group ── */
+  var ALTERNATIVES = {
+    "Pushups": "Swap in wall push-ups, knee push-ups, or pike presses",
+    "Squats": "Try chair squats, sumo squats, or wall sits instead",
+    "Lunges": "Sub in reverse lunges, side lunges, or step-backs",
+    "Planks": "Swap for dead bugs, bird-dogs, or hollow holds",
+    "Burpees": "Scale down with squat thrusts or sprawls",
+    "Jumping Jacks": "Step-jacks or seal jacks hit the same cardio goal",
+    "Jump Rope": "High knees or fast feet give the same cardio burn",
+    "Stretching": "Yoga flow or foam rolling targets the same flexibility",
+    "Flexibility": "Try dynamic stretches or mobility drills for similar results",
+    "Core": "Bicycle crunches, leg raises, or mountain climbers work too",
+    "Balance": "Single-leg stands or heel-to-toe walks build the same stability",
+    "Wall Sit": "Chair pose or static lunges load the same muscles",
+    "Calf Raises": "Step-ups or toe walks target the same group",
+    "Strength": "Bodyweight circuits or resistance band moves hit the same goal",
+    "Steps": "Marching in place or pacing during load screens counts too",
+    "Walking": "Treadmill walking or pacing indoors works just as well",
+    "Running": "Brisk walking, stair climbing, or jogging in place as swaps",
+    "Cardio": "Dancing, shadow boxing, or high knees for the same effect",
+    "Mindfulness": "Swap in deep breathing, journaling, or a body scan",
+    "Nutrition": "Focus on hydration or meal timing for the same health boost",
+    "Community": "Rally your squad in a group chat or co-op session instead",
+    "Gaming Movement": "Any standing or pacing gameplay hits the same active-gaming goal"
+  };
+
+  /* ── build 4 bullet points from challenge data ── */
+  /* Order: 1) Overview  2) Exercise breakdown  3) Alternatives  4) Social tracking */
   function buildBullets(challenge) {
     var bullets = [];
+    var cat = challenge.cat || "";
+    var name = challenge.name || "Challenge";
 
-    // Bullet 1: Overview / focus
+    // ── Bullet 1: Overview ──
     if (challenge.overview) {
-      // Trim to first sentence for conciseness
       var first = challenge.overview.split(/\.\s/)[0];
       if (first && first.length < challenge.overview.length) first += ".";
+      if (first.length > 90) first = first.substring(0, 87) + "...";
       bullets.push(first || challenge.overview);
     } else if (challenge.focus) {
       bullets.push(challenge.focus);
-    }
-
-    // Bullet 2: Beginner level goal
-    if (challenge.levels && challenge.levels.l1) {
-      bullets.push("Start: " + challenge.levels.l1);
-    }
-
-    // Bullet 3: Tracking method
-    if (challenge.tracking) {
-      var trackShort = challenge.tracking.split(/\.\s/)[0];
-      if (trackShort.length > 80) trackShort = trackShort.substring(0, 77) + "...";
-      bullets.push("Track: " + trackShort);
-    } else if (challenge.intensity) {
-      bullets.push("Intensity: " + challenge.intensity);
-    }
-
-    // Bullet 4: Category + no equipment
-    if (challenge.cat) {
-      bullets.push(challenge.cat + " \u00B7 No equipment needed \u00B7 Phone only");
     } else {
-      bullets.push("No equipment needed \u00B7 Phone only");
+      var clean = name.replace(/^(90|60|30)\s*Day\s*/i, "").replace(/^Sweaty Mob:?\s*/i, "");
+      bullets.push(clean + " — no equipment, just you");
     }
 
-    // For bare 90-day challenges (name only), generate bullets from name
-    if (bullets.length <= 1 && challenge.name) {
-      var n = challenge.name.replace(/^90 Day\s*/i, "").replace(/^30 Day\s*/i, "");
-      bullets = [
-        n,
-        "Progressive 4-phase program",
-        "Track with your phone",
-        "No equipment needed"
-      ];
+    // ── Bullet 2: Easy exercise breakdown ──
+    if (challenge.levels && challenge.levels.l1) {
+      var l1 = challenge.levels.l1;
+      if (l1.length > 80) l1 = l1.substring(0, 77) + "...";
+      bullets.push("Start easy: " + l1);
+    } else if (challenge.daily && challenge.daily.length > 0) {
+      var d1 = challenge.daily[0].replace(/^Day\s*1:?\s*/i, "");
+      if (d1.length > 80) d1 = d1.substring(0, 77) + "...";
+      bullets.push("Day 1: " + d1);
+    } else if (challenge.weekly && challenge.weekly.length > 0) {
+      var w1 = challenge.weekly[0].split(":")[1] || challenge.weekly[0];
+      w1 = w1.trim();
+      if (w1.length > 80) w1 = w1.substring(0, 77) + "...";
+      bullets.push("Week 1: " + w1);
+    } else {
+      bullets.push("Progressive phases that scale to your fitness level");
     }
 
-    return bullets.slice(0, 4);
+    // ── Bullet 3: Alternatives to hit the same goal ──
+    if (cat && ALTERNATIVES[cat]) {
+      bullets.push(ALTERNATIVES[cat]);
+    } else {
+      // Fallback: infer from name keywords
+      var lname = name.toLowerCase();
+      var matched = false;
+      var altKeys = Object.keys(ALTERNATIVES);
+      for (var a = 0; a < altKeys.length; a++) {
+        if (lname.indexOf(altKeys[a].toLowerCase()) !== -1) {
+          bullets.push(ALTERNATIVES[altKeys[a]]);
+          matched = true;
+          break;
+        }
+      }
+      if (!matched) {
+        bullets.push("Mix in any bodyweight move that targets the same goal");
+      }
+    }
+
+    // ── Bullet 4: Track on social with @sweatym0b ──
+    bullets.push("Track it: post your check-in and tag @sweatym0b");
+
+    return bullets;
   }
 
   /* ── render active challenge (hero-style for the featured slots) ── */
