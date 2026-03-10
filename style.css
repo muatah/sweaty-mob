@@ -1980,6 +1980,12 @@ a:hover { color: var(--color-accent-hover); }
 .active-challenge-slot {
   min-height: 200px;
 }
+.active-challenge-slot--centered {
+  grid-column: 1 / -1;
+  max-width: 560px;
+  margin: 0 auto;
+  width: 100%;
+}
 .active-challenge {
   background: var(--color-surface);
   border: 2px solid var(--color-border);

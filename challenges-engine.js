@@ -452,8 +452,7 @@
 
     var allChallenges = SM_CHALLENGES.daily.concat(
       SM_CHALLENGES.weekly,
-      SM_CHALLENGES.thirty,
-      SM_CHALLENGES.ninety
+      SM_CHALLENGES.thirty
     );
 
     var currentFilter = "all";
@@ -465,7 +464,6 @@
       if (currentFilter === "daily") filtered = SM_CHALLENGES.daily;
       else if (currentFilter === "weekly") filtered = SM_CHALLENGES.weekly;
       else if (currentFilter === "thirty") filtered = SM_CHALLENGES.thirty;
-      else if (currentFilter === "ninety") filtered = SM_CHALLENGES.ninety;
 
       if (currentSearch) {
         var q = currentSearch.toLowerCase();
@@ -532,9 +530,6 @@
     var thirtyChallenge = pick(SM_CHALLENGES.thirty, monIdx);
     renderActiveChallenge("thirty-challenge", thirtyChallenge, "This Month", currentMonthYear(), "30-Day Challenge");
 
-    // 90-Day challenge
-    var ninetyChallenge = pick(SM_CHALLENGES.ninety, qIdx);
-    renderActiveChallenge("ninety-challenge", ninetyChallenge, "This Quarter", currentQuarter(), "90-Day Challenge");
 
     // Library
     renderLibraryCards("library-grid", SM_CHALLENGES.daily, 12);
