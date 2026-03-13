@@ -57,26 +57,67 @@
     window.closeShareModal();
   };
 
-  // Instagram — can't pre-fill, so copy text + open IG
+  /* ── Detect mobile for deep links ── */
+  function isMobile() {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
+
+  /* ── Try app deep link, fall back to web URL ── */
+  function tryDeepLink(appUrl, webUrl, delay) {
+    if (isMobile()) {
+      var start = Date.now();
+      window.location.href = appUrl;
+      setTimeout(function () {
+        // If we're still here after the delay, app didn't open — go to web
+        if (Date.now() - start < (delay || 2500) + 500) {
+          window.open(webUrl, "_blank", "noopener,noreferrer");
+        }
+      }, delay || 2500);
+    } else {
+      window.open(webUrl, "_blank", "noopener,noreferrer");
+    }
+  }
+
+  // Instagram — copy caption, open story camera on mobile or IG web on desktop
   window.shareToInstagram = function () {
     var text = getShareText(currentChallengeName);
     copyToClipboard(text);
-    showToast("Caption copied! Opening Instagram...");
+    showToast("Caption copied! Paste it into your Story \u2728");
     setTimeout(function () {
-      window.open("https://instagram.com/sweatym0b", "_blank", "noopener,noreferrer");
+      tryDeepLink(
+        "instagram://story-camera",
+        "https://instagram.com/sweatym0b"
+      );
       window.closeShareModal();
-    }, 1200);
+    }, 1400);
   };
 
-  // TikTok — same approach as Instagram
+  // Snapchat — copy caption, open Snapchat camera on mobile or Snap web on desktop
+  window.shareToSnapchat = function () {
+    var text = getShareText(currentChallengeName);
+    copyToClipboard(text);
+    showToast("Caption copied! Paste it into your Snap \u2728");
+    setTimeout(function () {
+      tryDeepLink(
+        "snapchat://",
+        "https://snapchat.com/add/sweatym0b"
+      );
+      window.closeShareModal();
+    }, 1400);
+  };
+
+  // TikTok — copy caption, open TikTok camera on mobile or TikTok web on desktop
   window.shareToTikTok = function () {
     var text = getShareText(currentChallengeName);
     copyToClipboard(text);
-    showToast("Caption copied! Opening TikTok...");
+    showToast("Caption copied! Paste it into your TikTok \u2728");
     setTimeout(function () {
-      window.open("https://tiktok.com/@sweatym0b", "_blank", "noopener,noreferrer");
+      tryDeepLink(
+        "snssdk1233://",
+        "https://tiktok.com/@sweatym0b"
+      );
       window.closeShareModal();
-    }, 1200);
+    }, 1400);
   };
 
   // Facebook — share dialog
