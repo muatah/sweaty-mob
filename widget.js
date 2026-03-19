@@ -68,8 +68,8 @@
       position: fixed;\
       bottom: 24px;\
       right: 24px;\
-      width: 418px;\
-      height: 572px;\
+      width: 380px;\
+      height: 520px;\
       border-radius: 16px;\
       background: ' + CONFIG.brandDark + ';\
       z-index: 10000;\
@@ -88,6 +88,25 @@
       pointer-events: all;\
     }\
     \
+    @media (min-width: 481px) {\
+      .sm-widget-panel {\
+        width: 460px;\
+        height: 630px;\
+      }\
+      .sm-widget-header-title { font-size: 16px; }\
+      .sm-widget-header-subtitle { font-size: 12px; }\
+      .sm-widget-msg { font-size: 14px; }\
+      .sm-widget-msg-ai h1 { font-size: 16px; }\
+      .sm-widget-msg-ai h2 { font-size: 15px; }\
+      .sm-widget-msg-ai h3 { font-size: 14px; }\
+      .sm-widget-msg-ai code { font-size: 13px; }\
+      .sm-widget-prompts-title { font-size: 12px; }\
+      .sm-widget-prompt-btn { font-size: 14px; }\
+      .sm-widget-welcome h3 { font-size: 19px; }\
+      .sm-widget-welcome p { font-size: 13px; }\
+      .sm-widget-input textarea { font-size: 14px; }\
+      .sm-widget-typing-text { font-size: 12px; }\
+    }\
     @media (max-width: 480px) {\
       .sm-widget-panel {\
         width: calc(100vw - 16px);\
