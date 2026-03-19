@@ -8,7 +8,7 @@
   'use strict';
 
   var CONFIG = {
-    apiUrl: 'WORKER_URL_PLACEHOLDER', // Will be replaced with actual Cloudflare Worker URL after deployment
+    apiUrl: 'https://sweaty-mob-ai.mgibsonhunter.workers.dev', // Will be replaced with actual Cloudflare Worker URL after deployment
     sessionId: 'smw_' + Math.random().toString(36).substring(2, 9),
     widgetTitle: 'Sweaty Mob AI',
     widgetSubtitle: 'Gaming Fitness Assistant',
