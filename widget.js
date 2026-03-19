@@ -68,8 +68,8 @@
       position: fixed;\
       bottom: 24px;\
       right: 24px;\
-      width: 380px;\
-      height: 520px;\
+      width: 418px;\
+      height: 572px;\
       border-radius: 16px;\
       background: ' + CONFIG.brandDark + ';\
       z-index: 10000;\
