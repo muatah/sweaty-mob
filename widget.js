@@ -54,6 +54,92 @@
     .sm-widget-fab.sm-widget-hidden { display: none; }\
     .sm-widget-fab svg { width: 28px; height: 28px; color: #fff; fill: none; stroke: currentColor; stroke-width: 2; }\
     \
+    /* ─── Attention Seeker Tooltip ─── */\
+    .sm-widget-attention {\
+      position: fixed;\
+      bottom: 92px;\
+      right: 24px;\
+      background: #fff;\
+      color: ' + CONFIG.brandDark + ';\
+      border-radius: 14px;\
+      padding: 14px 40px 14px 16px;\
+      max-width: 260px;\
+      z-index: 9998;\
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25), 0 0 0 1px rgba(229,26,26,0.15);\
+      opacity: 0;\
+      transform: translateY(10px) scale(0.95);\
+      pointer-events: none;\
+      transition: opacity 0.35s ease, transform 0.35s ease;\
+      font-family: "Satoshi", system-ui, -apple-system, sans-serif;\
+    }\
+    .sm-widget-attention.sm-widget-attention-visible {\
+      opacity: 1;\
+      transform: translateY(0) scale(1);\
+      pointer-events: all;\
+    }\
+    .sm-widget-attention::after {\
+      content: "";\
+      position: absolute;\
+      bottom: -7px;\
+      right: 26px;\
+      width: 14px;\
+      height: 14px;\
+      background: #fff;\
+      transform: rotate(45deg);\
+      border-radius: 2px;\
+      box-shadow: 3px 3px 6px rgba(0,0,0,0.08);\
+    }\
+    .sm-widget-attention-text {\
+      font-size: 13px;\
+      font-weight: 600;\
+      line-height: 1.45;\
+      color: ' + CONFIG.brandDark + ';\
+    }\
+    .sm-widget-attention-text span {\
+      color: ' + CONFIG.brandRed + ';\
+      font-weight: 800;\
+    }\
+    .sm-widget-attention-sub {\
+      font-size: 11px;\
+      color: #666;\
+      margin-top: 4px;\
+      line-height: 1.35;\
+    }\
+    .sm-widget-attention-close {\
+      position: absolute;\
+      top: 6px;\
+      right: 8px;\
+      background: none;\
+      border: none;\
+      cursor: pointer;\
+      color: #999;\
+      font-size: 16px;\
+      line-height: 1;\
+      padding: 4px;\
+      transition: color 0.15s;\
+      outline: none;\
+    }\
+    .sm-widget-attention-close:hover { color: ' + CONFIG.brandRed + '; }\
+    @keyframes sm-widget-attention-nudge {\
+      0%, 100% { transform: translateY(0) scale(1); }\
+      25% { transform: translateY(-3px) scale(1.01); }\
+      50% { transform: translateY(0) scale(1); }\
+      75% { transform: translateY(-2px) scale(1.005); }\
+    }\
+    .sm-widget-attention.sm-widget-attention-nudge {\
+      animation: sm-widget-attention-nudge 0.6s ease-in-out;\
+    }\
+    @media (max-width: 480px) {\
+      .sm-widget-attention {\
+        right: 12px;\
+        bottom: 88px;\
+        max-width: 220px;\
+        padding: 12px 34px 12px 14px;\
+      }\
+      .sm-widget-attention-text { font-size: 12px; }\
+      .sm-widget-attention-sub { font-size: 10px; }\
+    }\
+    \
     @keyframes sm-widget-entrance {\
       from { opacity: 0; transform: scale(0.5) translateY(20px); }\
       to { opacity: 1; transform: scale(1) translateY(0); }\
@@ -405,6 +491,8 @@
   var messages = [];
   var isOpen = false;
   var isLoading = false;
+  var attentionEl = null;
+  var attentionDismissed = false;
 
   /* ─── DOM Elements ────────────────────────────────────────── */
   var fab, panel, messagesContainer, inputEl, sendBtn, typingEl;
@@ -468,6 +556,83 @@
     }
     closeList();
     return html;
+  }
+
+  /* ─── Attention Seeker ───────────────────────────────────── */
+  function createAttentionSeeker() {
+    // Only show once per session
+    try {
+      if (sessionStorage.getItem('sm_attention_dismissed')) {
+        attentionDismissed = true;
+        return;
+      }
+    } catch(e) {}
+
+    attentionEl = document.createElement('div');
+    attentionEl.className = 'sm-widget-attention';
+    attentionEl.setAttribute('role', 'tooltip');
+
+    var textEl = document.createElement('div');
+    textEl.className = 'sm-widget-attention-text';
+    textEl.innerHTML = '\u{1F3AE} Try <span>Sweaty Mob AI</span> — your free gaming fitness coach';
+
+    var subEl = document.createElement('div');
+    subEl.className = 'sm-widget-attention-sub';
+    subEl.textContent = 'Ask for workouts, routines & tips. Tap to chat \u{1F4AA}';
+
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'sm-widget-attention-close';
+    closeBtn.innerHTML = '\u2715';
+    closeBtn.setAttribute('aria-label', 'Dismiss');
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      dismissAttention();
+    });
+
+    attentionEl.appendChild(textEl);
+    attentionEl.appendChild(subEl);
+    attentionEl.appendChild(closeBtn);
+
+    // Clicking the tooltip itself opens the chat
+    attentionEl.addEventListener('click', function() {
+      dismissAttention();
+      if (!isOpen) togglePanel();
+    });
+
+    document.body.appendChild(attentionEl);
+
+    // Show after 5-second delay (best practice: don't interrupt immediately)
+    setTimeout(function() {
+      if (!attentionDismissed && !isOpen) {
+        attentionEl.classList.add('sm-widget-attention-visible');
+        // Gentle nudge animation after 12 seconds to recapture attention
+        setTimeout(function() {
+          if (!attentionDismissed && !isOpen && attentionEl) {
+            attentionEl.classList.add('sm-widget-attention-nudge');
+            attentionEl.addEventListener('animationend', function() {
+              attentionEl.classList.remove('sm-widget-attention-nudge');
+            }, { once: true });
+          }
+        }, 12000);
+        // Auto-dismiss after 30 seconds to avoid annoyance
+        setTimeout(function() {
+          if (!attentionDismissed) dismissAttention();
+        }, 30000);
+      }
+    }, 5000);
+  }
+
+  function dismissAttention() {
+    attentionDismissed = true;
+    try { sessionStorage.setItem('sm_attention_dismissed', '1'); } catch(e) {}
+    if (attentionEl) {
+      attentionEl.classList.remove('sm-widget-attention-visible');
+      setTimeout(function() {
+        if (attentionEl && attentionEl.parentNode) {
+          attentionEl.parentNode.removeChild(attentionEl);
+        }
+      }, 400);
+    }
   }
 
   /* ─── Create FAB ──────────────────────────────────────────── */
@@ -629,6 +794,8 @@
     if (isOpen) {
       panel.classList.add('sm-widget-open');
       fab.classList.add('sm-widget-hidden');
+      // Dismiss attention seeker when chat opens
+      if (!attentionDismissed) dismissAttention();
       setTimeout(function() { inputEl.focus(); }, 300);
     } else {
       panel.classList.remove('sm-widget-open');
@@ -725,6 +892,7 @@
   function init() {
     createFAB();
     createPanel();
+    createAttentionSeeker();
   }
 
   // Wait for DOM ready
