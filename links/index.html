@@ -53,19 +53,19 @@
     <span class="method-tag">Fitness Gaming</span>
   </div>
 
-  <!-- Stats -->
+  <!-- Stats (peer-reviewed sources) -->
   <div class="stats-bar reveal">
     <div class="stat">
-      <span class="stat-value">222%</span>
-      <span class="stat-label">Energy</span>
+      <span class="stat-value">10x</span>
+      <span class="stat-label">Calorie Burn</span>
     </div>
     <div class="stat">
-      <span class="stat-value">64%</span>
-      <span class="stat-label">Heart Rate</span>
+      <span class="stat-value">97%</span>
+      <span class="stat-label">Cardio Zone</span>
     </div>
     <div class="stat">
-      <span class="stat-value">8K+</span>
-      <span class="stat-label">Community</span>
+      <span class="stat-value">2x</span>
+      <span class="stat-label">Stick Rate</span>
     </div>
   </div>
 
@@ -281,9 +281,9 @@
         const el = entry.target;
         const text = el.textContent;
         
-        if (text === '222%') animateValue(el, 222, '%', 1200);
-        else if (text === '64%') animateValue(el, 64, '%', 800);
-        else if (text === '8K+') animateValue(el, 8, 'K+', 600);
+        if (text === '10x') animateValue(el, 10, 'x', 800);
+        else if (text === '97%') animateValue(el, 97, '%', 1000);
+        else if (text === '2x') animateValue(el, 2, 'x', 600);
         
         observer.unobserve(el);
       }
