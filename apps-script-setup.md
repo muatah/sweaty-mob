@@ -1,66 +1,35 @@
-# Sweaty Mob Lead Capture — Google Apps Script Setup
+# Sweaty Mob Lead Capture — Setup Guide
 
-## Quick Setup (5 minutes)
+## Interactive Setup Page
 
-### Step 1: Open the Script Editor
-1. Go to your Google Sheet: [Sweaty Mob — Lead Captures](https://docs.google.com/spreadsheets/d/1pMllAU5MW2HSn7yw2RS2zQCGxDdWesNJrIf_1rUf3uc/edit)
-2. Click **Extensions** → **Apps Script**
+Use the visual guide to set up Google Sheets integration:
+https://www.perplexity.ai/computer/a/sweaty-mob-form-setup-jTcQIkerQ_O00ogUxT1sjA
 
-### Step 2: Paste the Code
-Delete any existing code in the editor and paste this:
+## Google Sheet
 
-```javascript
-function doPost(e) {
-  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  var data = JSON.parse(e.postData.contents);
-  
-  sheet.appendRow([
-    new Date().toLocaleString('en-US', {timeZone: 'America/New_York'}),
-    data.name || '',
-    data.email || '',
-    data.interest || '',
-    data.source || ''
-  ]);
-  
-  return ContentService
-    .createTextOutput(JSON.stringify({status: 'success'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
+Leads are stored here:
+https://docs.google.com/spreadsheets/d/1pMllAU5MW2HSn7yw2RS2zQCGxDdWesNJrIf_1rUf3uc/edit
 
-function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({status: 'ok', message: 'Sweaty Mob Lead Capture is running'}))
-    .setMimeType(ContentService.MimeType.JSON);
-}
-```
+Columns: Timestamp | Name | Email | Interest | Source Page
 
-### Step 3: Deploy
-1. Click **Deploy** → **New deployment**
-2. Click the gear icon next to "Select type" → choose **Web app**
-3. Set:
-   - **Description**: "Sweaty Mob Lead Capture"
-   - **Execute as**: "Me"
-   - **Who has access**: "Anyone"
-4. Click **Deploy**
-5. Click **Authorize access** and follow the Google sign-in prompts
-6. Copy the **Web app URL** — it looks like: `https://script.google.com/macros/s/XXXXX/exec`
+## How It Works
 
-### Step 4: Update Your Website
-Open `index.html` and find this line near the top of the `<script>` section at the bottom:
+1. Visitor fills out a form on sweatymob.org
+2. Form POSTs data to a Google Apps Script web app endpoint
+3. The script writes a new row to the Google Sheet above
+4. Visitor sees a confirmation message
+
+## Fallback
+
+If the endpoint URL hasn't been configured yet (`FORM_ENDPOINT` is empty in app.js),
+form submissions will open a pre-filled email to admin@sweatymob.org with the lead info.
+
+## To Update the Endpoint URL
+
+Open `app.js` and update line ~260:
 
 ```javascript
-const FORM_ENDPOINT = '';
+var FORM_ENDPOINT = 'https://script.google.com/macros/s/YOUR-ID-HERE/exec';
 ```
 
-Replace it with your URL:
-
-```javascript
-const FORM_ENDPOINT = 'https://script.google.com/macros/s/YOUR-ID-HERE/exec';
-```
-
-That's it! Forms will now capture leads directly to your Google Sheet.
-
----
-
-## Testing
-After deploying, test by submitting the form on your site. Check your Google Sheet — a new row should appear within a few seconds.
+Replace `YOUR-ID-HERE` with the URL from Step 3 of the setup page.
