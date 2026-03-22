@@ -250,3 +250,80 @@
   }
 
 })();
+
+/* ========================
+   LEAD CAPTURE FORMS
+   Submit to Google Apps Script endpoint → Google Sheets
+   ======================== */
+
+// PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE:
+var FORM_ENDPOINT = '';
+
+function submitLeadForm(form) {
+  var statusEl = form.parentElement.querySelector('.lead-form__status');
+  var btn = form.querySelector('.lead-form__btn');
+  var source = form.parentElement.getAttribute('data-source') || 'Unknown';
+
+  var payload = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    interest: form.interest.value,
+    source: source
+  };
+
+  // Basic validation
+  if (!payload.name || !payload.email) {
+    statusEl.textContent = 'Please fill in all fields.';
+    statusEl.className = 'lead-form__status lead-form__status--error';
+    return false;
+  }
+
+  // Check endpoint is configured
+  if (!FORM_ENDPOINT) {
+    // Fallback: open mailto with the data
+    var subject = encodeURIComponent('Sweaty Mob Lead: ' + payload.interest);
+    var body = encodeURIComponent(
+      'Name: ' + payload.name + '\n' +
+      'Email: ' + payload.email + '\n' +
+      'Interest: ' + payload.interest + '\n' +
+      'Source: ' + source
+    );
+    window.location.href = 'mailto:admin@sweatymob.org?subject=' + subject + '&body=' + body;
+    statusEl.textContent = 'Opening email... (backup method)';
+    statusEl.className = 'lead-form__status lead-form__status--success';
+    return false;
+  }
+
+  // Disable button while submitting
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  statusEl.textContent = '';
+  statusEl.className = 'lead-form__status';
+
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+  .then(function () {
+    // With no-cors we can't read the response, but if no error it likely succeeded
+    statusEl.textContent = "You're in! Welcome to the Mob.";
+    statusEl.className = 'lead-form__status lead-form__status--success';
+    form.reset();
+    btn.disabled = false;
+    btn.textContent = 'Joined!';
+    setTimeout(function () {
+      btn.textContent = form.parentElement.getAttribute('data-source') === 'Certifications'
+        ? 'Join the Waitlist' : 'Join the Mob';
+    }, 3000);
+  })
+  .catch(function () {
+    statusEl.textContent = 'Something went wrong. Try again or email admin@sweatymob.org';
+    statusEl.className = 'lead-form__status lead-form__status--error';
+    btn.disabled = false;
+    btn.textContent = 'Try Again';
+  });
+
+  return false;
+}

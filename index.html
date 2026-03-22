@@ -303,7 +303,23 @@
                 <img src="./assets/book-10.jpg" alt="" style="width:56px;height:72px;object-fit:cover;border-radius:var(--radius-sm);border:2px solid var(--color-dark-bg);margin-left:-8px;" loading="lazy">
               </div>
             </div>
-            <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-6);">Follow on Gumroad — Get Notified</a>
+            <!-- Lead Capture Form: Library -->
+            <div class="lead-form fade-in" data-source="Library">
+              <p class="lead-form__heading">Get Notified When New Guides Drop</p>
+              <form class="lead-form__fields" onsubmit="return submitLeadForm(this)">
+                <input type="text" name="name" placeholder="Your Name" required class="lead-form__input">
+                <input type="email" name="email" placeholder="Your Email" required class="lead-form__input">
+                <select name="interest" class="lead-form__input lead-form__select">
+                  <option value="Ebooks">Interested in: Ebooks</option>
+                  <option value="All Products">Interested in: All Products</option>
+                  <option value="Kids Program">Interested in: Kids Program</option>
+                  <option value="Certifications">Interested in: Certifications</option>
+                </select>
+                <button type="submit" class="btn btn--primary lead-form__btn">Join the Mob</button>
+              </form>
+              <p class="lead-form__status" aria-live="polite"></p>
+              <p class="lead-form__fine">No spam. Just drops, deals &amp; Mob updates.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -315,8 +331,22 @@
         <p class="section__eyebrow text-center">Power-Up Packs</p>
         <h2 class="section__title text-center fade-in">Bundle Up. Save More. Move More.</h2>
         <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;">Four curated bundles launch alongside the full library in May. The Starter Pack, Deep Dive Pack, Wellness Pack, and Full Library — each built around a specific goal.</p>
-        <div style="text-align:center;margin-top:var(--space-6);">
-          <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-6);">Follow on Gumroad — Get Notified</a>
+        <!-- Lead Capture Form: Bundles -->
+        <div class="lead-form lead-form--light fade-in" data-source="Bundles" style="margin-top:var(--space-6);">
+          <p class="lead-form__heading">Get First Access to Bundle Deals</p>
+          <form class="lead-form__fields" onsubmit="return submitLeadForm(this)">
+            <input type="text" name="name" placeholder="Your Name" required class="lead-form__input">
+            <input type="email" name="email" placeholder="Your Email" required class="lead-form__input">
+            <select name="interest" class="lead-form__input lead-form__select">
+              <option value="Bundles">Interested in: Bundles</option>
+              <option value="All Products">Interested in: All Products</option>
+              <option value="Ebooks">Interested in: Ebooks</option>
+              <option value="Kids Program">Interested in: Kids Program</option>
+            </select>
+            <button type="submit" class="btn btn--primary lead-form__btn">Join the Mob</button>
+          </form>
+          <p class="lead-form__status" aria-live="polite"></p>
+          <p class="lead-form__fine">No spam. Just drops, deals &amp; Mob updates.</p>
         </div>
       </div>
     </section>
@@ -327,8 +357,22 @@
         <p class="section__eyebrow text-center">Level Up Your Career</p>
         <h2 class="section__title text-center fade-in">Get Certified. Lead the Movement.</h2>
         <p class="section__subtitle fade-in" style="margin:0 auto;text-align:center;color:var(--color-dark-text-muted);">Five certification tiers are in development — from Home Base ($97) for parents and families to PE Pro ($497) aligned with SHAPE America standards. Designed for after-school providers, PE teachers, sports coaches, and fitness professionals who want to bring exergaming to their communities.</p>
-        <div style="text-align:center;margin-top:var(--space-6);">
-          <a href="mailto:admin@sweatymob.org?subject=Certification%20Waitlist&body=I%27m%20interested%20in%20the%20Sweaty%20Mob%20certification%20program.%20Please%20add%20me%20to%20the%20waitlist." class="btn btn--primary" style="font-size:var(--text-sm);padding:var(--space-3) var(--space-6);">Join the Certification Waitlist</a>
+        <!-- Lead Capture Form: Certifications -->
+        <div class="lead-form fade-in" data-source="Certifications" style="margin-top:var(--space-6);">
+          <p class="lead-form__heading">Join the Certification Waitlist</p>
+          <form class="lead-form__fields" onsubmit="return submitLeadForm(this)">
+            <input type="text" name="name" placeholder="Your Name" required class="lead-form__input">
+            <input type="email" name="email" placeholder="Your Email" required class="lead-form__input">
+            <select name="interest" class="lead-form__input lead-form__select">
+              <option value="Certifications">Interested in: Certifications</option>
+              <option value="PE Pro Certification">Interested in: PE Pro ($497)</option>
+              <option value="Home Base Certification">Interested in: Home Base ($97)</option>
+              <option value="All Products">Interested in: All Products</option>
+            </select>
+            <button type="submit" class="btn btn--primary lead-form__btn">Join the Waitlist</button>
+          </form>
+          <p class="lead-form__status" aria-live="polite"></p>
+          <p class="lead-form__fine">We'll notify you as soon as enrollment opens.</p>
         </div>
       </div>
     </section>
