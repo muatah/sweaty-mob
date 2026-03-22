@@ -257,7 +257,7 @@
    ======================== */
 
 // PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL HERE:
-var FORM_ENDPOINT = '';
+var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxTxHTPXBzkBzTm7yMJbmiZ9AlR8FpcGDeBe7dpJwFCjfvsxZKuY80G10gl46G6EWsj/exec';
 
 function submitLeadForm(form) {
   var statusEl = form.parentElement.querySelector('.lead-form__status');
