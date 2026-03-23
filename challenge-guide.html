@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Challenge Setup Guide | Sweaty Mob</title>
+<meta name="description" content="Step-by-step playbook for running tracker-verified fitness challenges with merch rewards. Zero inventory risk. Free tools. Built for the Sweaty Mob community.">
+<meta property="og:title" content="Challenge Setup Guide | Sweaty Mob">
+<meta property="og:description" content="Run tracker-verified fitness challenges with automatic merch rewards. Zero inventory. Free tools. Step-by-step playbook.">
+<meta property="og:type" content="website">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
+<link rel="canonical" href="https://sweatymob.org/challenge-guide.html">
+<meta property="og:url" content="https://sweatymob.org/challenge-guide.html">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Sweaty Mob Challenge Setup Guide",
+  "description": "A step-by-step playbook for running tracker-verified fitness challenges with merch sent automatically to every completer.",
+  "url": "https://sweatymob.org/challenge-guide.html",
+  "step": [
+    {"@type": "HowToStep", "name": "Create your free StepUp account", "position": 1},
+    {"@type": "HowToStep", "name": "Create a new group for your community", "position": 2},
+    {"@type": "HowToStep", "name": "Build your challenge", "position": 3},
+    {"@type": "HowToStep", "name": "Build the completion & gift claim form", "position": 4},
+    {"@type": "HowToStep", "name": "Turn on email notifications", "position": 5},
+    {"@type": "HowToStep", "name": "Create your Printful account & upload merch designs", "position": 6},
+    {"@type": "HowToStep", "name": "Place a manual order for each completer", "position": 7},
+    {"@type": "HowToStep", "name": "Promote the challenge", "position": 8},
+    {"@type": "HowToStep", "name": "Reward completers — tiered gift system", "position": 9},
+    {"@type": "HowToStep", "name": "Repeat, refine & scale", "position": 10}
+  ]
+}
+</script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="./index.html" class="header__logo" aria-label="Sweaty Mob Home">
+        <svg width="40" height="40" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Sweaty Mob logo">
+          <rect x="20" y="38" width="80" height="50" rx="25" stroke="currentColor" stroke-width="6" fill="none"/>
+          <rect x="36" y="55" width="4" height="16" rx="2" fill="currentColor"/>
+          <rect x="30" y="61" width="16" height="4" rx="2" fill="currentColor"/>
+          <circle cx="80" cy="56" r="4" fill="var(--color-accent, #e51a1a)"/>
+          <circle cx="90" cy="63" r="4" fill="var(--color-accent, #e51a1a)"/>
+          <polyline points="10,63 25,63 30,63 35,50 40,76 45,55 50,68 55,63 60,63 65,50 70,76 75,55 80,63 95,63 110,63" stroke="var(--color-accent, #e51a1a)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="header__logo-text">Sweaty Mob</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="./challenges.html" class="nav__link">Challenges</a>
+        <a href="./challenge-guide.html" class="nav__link" style='color:var(--color-text);'>Challenge Guide</a>
+        <a href="./index.html#library" class="nav__link">Products</a>
+        <a href="./index.html#coach-mo" class="nav__link">About Mo</a>
+        <a href="./index.html#kids" class="nav__link">Kids Programs</a>
+        <a href="./index.html#community" class="nav__link">Community</a>
+        <a href="./about.html" class="nav__link">Business</a>
+        <a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="nav__link nav__link--cta">Shop</a>
+      </nav>
+
+      <div class="header__controls">
+        <button data-theme-toggle aria-label="Switch to dark mode" class="theme-toggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav__backdrop" id="mobileNavBackdrop"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <div class="mobile-nav__header">
+      <div></div>
+      <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav__body">
+      <ul class="mobile-nav__list">
+        <li><a href="./challenges.html" class="mobile-nav__link"><span>Challenges</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="./challenge-guide.html" class="mobile-nav__link"><span>Challenge Guide</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="./index.html#library" class="mobile-nav__link"><span>Products</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="./index.html#coach-mo" class="mobile-nav__link"><span>About Mo</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="./index.html#kids" class="mobile-nav__link"><span>Kids Programs</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="./about.html" class="mobile-nav__link"><span>Business</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+        <li><a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer" class="mobile-nav__link"><span>Shop</span><svg class="mobile-nav__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN ========== -->
+  <main id="main">
+
+    <!-- Dark hero section -->
+    <section class="cg-hero">
+      <div class="cg-hero__inner">
+        <div class="cg-hero__tag">
+          <span class="cg-hero__dot"></span>
+          <span>Sweaty Mob &middot; Challenge Setup Guide</span>
+        </div>
+        <h1 class="cg-hero__title">Your Challenge<br><span>Goes Live.</span></h1>
+        <p class="cg-hero__sub">A step-by-step playbook for running a tracker-verified fitness challenge &mdash; with merch sent automatically to every completer. Zero inventory risk.</p>
+        <div class="cg-hero__badges">
+          <span class="cg-badge cg-badge--free">StepUp &mdash; Free</span>
+          <span class="cg-badge cg-badge--free">Google Forms &mdash; Free</span>
+          <span class="cg-badge cg-badge--paid">Printful &mdash; Pay per order only</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step-by-step guide -->
+    <section class="cg-guide">
+      <div class="cg-guide__inner">
+
+        <!-- PHASE 1 -->
+        <div class="cg-phase">
+          <span class="cg-phase__num">Phase 01</span>
+          <span class="cg-phase__line"></span>
+          <span class="cg-phase__title">Build the Challenge on StepUp</span>
+        </div>
+
+        <!-- Step 01 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">01</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Create Your Free StepUp Account</h3>
+              <span class="cg-tool cg-tool--free">Free</span>
+            </div>
+            <p class="cg-step__desc">StepUp tracks participant activity automatically across Apple Watch, Garmin, Fitbit, Samsung, Whoop, Oura, and phone-only users &mdash; all in one leaderboard.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Go to <strong>getmotivated.io</strong> (StepUp's web app) or download the StepUp app on iOS/Android</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Sign up with your email &mdash; select <strong>"I'm an organiser"</strong> when prompted</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Set up your Sweaty Mob brand profile: upload your logo, brand name, and a short bio</li>
+            </ul>
+            <span class="cg-link-pill">getmotivated.io &mdash; StepUp web portal</span>
+          </div>
+        </div>
+
+        <!-- Step 02 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">02</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Create a New Group for Your Community</h3>
+              <span class="cg-tool cg-tool--free">Free</span>
+            </div>
+            <p class="cg-step__desc">Groups are where your audience joins and where all challenges live. Think of it as the Sweaty Mob fitness home base inside StepUp.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Tap <strong>Create Group</strong> &rarr; name it "Sweaty Mob" &rarr; set it to <strong>Public</strong> (so anyone can join via link)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Upload a cover image &mdash; use an existing Sweaty Mob brand graphic</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Copy the group invite link &mdash; this is what you share on TikTok, IG, and YouTube</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Note: Groups support <strong>up to 1,500 members</strong> &mdash; unlimited groups allowed</li>
+            </ul>
+            <div class="cg-pro-tip"><strong>Pro tip:</strong> Put the StepUp group invite link in your Linktree so it's always one tap away from every bio.</div>
+          </div>
+        </div>
+
+        <!-- Step 03 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">03</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Build Your Challenge &mdash; Name, Goal &amp; Duration</h3>
+              <span class="cg-tool cg-tool--free">Free</span>
+            </div>
+            <p class="cg-step__desc">Inside your group, create the challenge. StepUp supports steps, distance, active minutes, and calories &mdash; pick the metric that suits your challenge theme.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Tap <strong>Create Challenge</strong> inside your group</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Name it with gaming language &mdash; e.g. <em>"14-Day Final Boss Challenge"</em> or <em>"The 100K Step Quest"</em></li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Set your target: e.g. <strong>100,000 steps over 14 days</strong> (about 7,150/day &mdash; accessible for most people)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Set start and end dates &mdash; give at least 3 days notice before launch so people can join</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Enable the leaderboard so participants can see each other's progress &mdash; this drives competition</li>
+            </ul>
+            <div class="cg-pro-tip"><strong>Challenge name ideas:</strong> "The Boss Battle Burn" &middot; "Level 14 Unlocked" &middot; "The 10K Daily Grind" &middot; "Final Rep Challenge" &middot; "XP Farm &mdash; 14 Days of Movement"</div>
+          </div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="cg-phase">
+          <span class="cg-phase__num">Phase 02</span>
+          <span class="cg-phase__line"></span>
+          <span class="cg-phase__title">Set Up the Google Form for Gift Claims</span>
+        </div>
+
+        <!-- Step 04 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">04</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Build the Completion &amp; Gift Claim Form</h3>
+              <span class="cg-tool cg-tool--accent">$0</span>
+            </div>
+            <p class="cg-step__desc">Go to <strong>forms.google.com</strong> and create a new form. This is what completers fill out to claim their merch gift. Keep it short &mdash; 5 fields max.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Field 1:</strong> Full name (Short answer)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Field 2:</strong> Email address (Short answer) &mdash; needed to send confirmation</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Field 3:</strong> Shipping address (Paragraph) &mdash; street, city, postcode, country</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Field 4:</strong> StepUp username or screenshot of your completion badge (File upload or Short answer)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Field 5 (optional):</strong> T-shirt size if sending apparel (Multiple choice: XS/S/M/L/XL/2XL)</li>
+            </ul>
+            <div class="cg-pro-tip"><strong>Form title copy:</strong> "You Finished &mdash; Claim Your Sweaty Mob Gift!" &mdash; Keep the confirmation message warm: "Congrats, you beast. Your gift is on its way. Mo will review all submissions within 48 hours."</div>
+          </div>
+        </div>
+
+        <!-- Step 05 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">05</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Turn On Email Notifications for Every Submission</h3>
+              <span class="cg-tool cg-tool--accent">$0</span>
+            </div>
+            <p class="cg-step__desc">Google Forms can email you instantly every time someone submits. This is your trigger to send the gift &mdash; no checking required.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>In your form editor, click the <strong>three dots (&vellip;)</strong> in the top right &rarr; <strong>Get email notifications for new responses</strong></li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Toggle it on &mdash; Mo's Gmail will now receive an instant notification per submission</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Optionally: in the <strong>Responses</strong> tab &rarr; click the Google Sheets icon to auto-log all submissions into a spreadsheet for easy tracking</li>
+            </ul>
+            <div class="cg-warn-box"><strong>Verification step:</strong> Before sending a gift, cross-check the submitter's StepUp username against the group leaderboard to confirm they actually completed the target. Takes 30 seconds per person &mdash; prevents anyone gaming the system.</div>
+          </div>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="cg-phase">
+          <span class="cg-phase__num">Phase 03</span>
+          <span class="cg-phase__line"></span>
+          <span class="cg-phase__title">Set Up Printful &amp; Dispatch Gifts</span>
+        </div>
+
+        <!-- Step 06 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">06</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Create Your Printful Account &amp; Upload Merch Designs</h3>
+              <span class="cg-tool cg-tool--free">Free to set up</span>
+            </div>
+            <p class="cg-step__desc">Printful prints and ships on demand &mdash; Mo never holds stock. You only pay when an order is placed. Set this up once and it's ready for every future challenge.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Go to <strong>printful.com</strong> &rarr; Create a free account</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Go to <strong>Product Templates</strong> &rarr; Create your first gift item (recommend: Classic Unisex Tee or Sticker Pack)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Upload the Sweaty Mob logo or a challenge-specific design (e.g. "14-Day Final Boss &mdash; Finisher")</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Save it as a <strong>Template</strong> &mdash; you'll use this every time you place a manual order</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Add a payment method to your Printful account so orders go through instantly</li>
+            </ul>
+            <span class="cg-link-pill">printful.com &mdash; Free account setup</span>
+          </div>
+        </div>
+
+        <!-- Step 07 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">07</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Place a Manual Order for Each Completer</h3>
+              <span class="cg-tool cg-tool--paid">~$12&ndash;$35/item</span>
+            </div>
+            <p class="cg-step__desc">When you receive a verified form submission, log into Printful and place a manual order to the completer's address. Takes about 2 minutes per person.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>In Printful dashboard &rarr; click <strong>Orders &rarr; Create Order &rarr; Manual Order</strong></li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Select your saved product template (the challenge finisher tee or sticker pack)</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Enter the recipient's name and shipping address from the Google Form response</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Select size if applicable &rarr; Confirm and pay &rarr; Printful prints and ships directly to them</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Printful emails the recipient a tracking number automatically &mdash; no extra step needed</li>
+            </ul>
+            <div class="cg-pro-tip"><strong>Cost breakdown per gift sent:</strong> Classic Tee ~$13.25 + shipping ~$4.99 = <strong>~$18&ndash;$22 total</strong>. Sticker pack ~$4.50 + shipping ~$3.99 = <strong>~$8&ndash;$9 total</strong>. Budget accordingly when deciding what % of completers get merch vs a digital reward.</div>
+          </div>
+        </div>
+
+        <!-- PHASE 4 -->
+        <div class="cg-phase">
+          <span class="cg-phase__num">Phase 04</span>
+          <span class="cg-phase__line"></span>
+          <span class="cg-phase__title">Launch, Promote &amp; Reward</span>
+        </div>
+
+        <!-- Step 08 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">08</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Promote the Challenge Across All Platforms</h3>
+              <span class="cg-tool cg-tool--accent">$0</span>
+            </div>
+            <p class="cg-step__desc">Run a 3-day countdown before the challenge opens. Make the announcement feel like a game launch, not a fitness programme.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>TikTok:</strong> "The challenge drops in 3 days. Connect your Apple Watch or Garmin. You vs the leaderboard." &mdash; hook video with challenge details overlay</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Instagram Stories:</strong> Countdown sticker + "Drop your tracker in the comments &mdash; Apple Watch or Garmin gang?" to drive engagement</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>YouTube Community post:</strong> Full challenge breakdown with rules, prizes, and the StepUp join link</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span><strong>Facebook Group:</strong> Pin the challenge post &mdash; include join link, rules, and prize photo</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Mid-challenge: post a leaderboard screenshot on Stories every 3&ndash;4 days to keep momentum</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 09 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">09</div>
+            <div class="cg-step__connector"></div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Reward Completers &mdash; Tiered Gift System</h3>
+              <span class="cg-tool cg-tool--paid">Mixed cost</span>
+            </div>
+            <p class="cg-step__desc">Not every completer needs a physical gift &mdash; use a tiered reward system to maximise motivation while controlling costs. This also creates three levels of content moments to post.</p>
+            <div class="cg-tiers">
+              <div class="cg-tier cg-tier--1">
+                <div class="cg-tier__label">All Completers</div>
+                <div class="cg-tier__title">Digital Gift</div>
+                <div class="cg-tier__desc">Sweaty Mob workout PDF + 20% merch discount code. Sent via email. Cost: $0.</div>
+              </div>
+              <div class="cg-tier cg-tier--2">
+                <div class="cg-tier__label">Top 3 on Leaderboard</div>
+                <div class="cg-tier__title">Merch Item</div>
+                <div class="cg-tier__desc">Finisher tee or sticker pack via Printful. Tagged in a Reel. Cost: ~$18&ndash;$22/person.</div>
+              </div>
+              <div class="cg-tier cg-tier--3">
+                <div class="cg-tier__label">1 Random Completer</div>
+                <div class="cg-tier__title">1-on-1 Call with Mo</div>
+                <div class="cg-tier__desc">30-min coaching session. Booked via Calendly (free). Cost: Mo's time only.</div>
+              </div>
+            </div>
+            <div class="cg-pro-tip"><strong>Content moment:</strong> Post a "Challenge Wrap" Reel announcing winners, showing the leaderboard, and tagging top completers. This becomes your best-performing post of the month and the best ad for the next challenge.</div>
+          </div>
+        </div>
+
+        <!-- Step 10 -->
+        <div class="cg-step">
+          <div class="cg-step__numcol">
+            <div class="cg-step__num">10</div>
+          </div>
+          <div class="cg-step__card">
+            <div class="cg-step__header">
+              <h3 class="cg-step__title">Repeat, Refine &amp; Scale</h3>
+              <span class="cg-tool cg-tool--accent">Ongoing</span>
+            </div>
+            <p class="cg-step__desc">After the first challenge, Mo will have real data: how many joined, how many completed, what the drop-off looked like. Use that to make the next one better.</p>
+            <ul class="cg-substeps">
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Run challenges every 6&ndash;8 weeks &mdash; enough gap to create anticipation, close enough to keep momentum</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Increase the target slightly each time &mdash; participants level up alongside the brand</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Collect testimonials and "before/after" stats from completers &mdash; use them in the next launch post</li>
+              <li class="cg-substep"><span class="cg-substep__icon">&rarr;</span>Once the community hits 200+ regular participants, consider adding a paid challenge tier ($14.99) for exclusive coaching content during the challenge period</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="cg-final">
+          <div class="cg-final__content">
+            <h2 class="cg-final__title">Total Upfront<br><span>Platform Cost: $0</span></h2>
+            <p class="cg-final__desc">The only money spent is on merch gifts &mdash; and only after someone actually completes the challenge. Every other tool in this pipeline is completely free. Set it up once, run it forever.</p>
+            <div class="cg-timeline">
+              <div class="cg-timeline__seg cg-timeline__seg--1">
+                <span class="cg-timeline__label">Day 1&ndash;2</span>
+                StepUp + Google Form setup
+              </div>
+              <div class="cg-timeline__seg cg-timeline__seg--2">
+                <span class="cg-timeline__label">Day 3&ndash;5</span>
+                Promote &amp; launch
+              </div>
+              <div class="cg-timeline__seg cg-timeline__seg--3">
+                <span class="cg-timeline__label">Day 19&ndash;21</span>
+                Ship gifts &amp; post wrap Reel
+              </div>
+            </div>
+          </div>
+          <div class="cg-final__cost">
+            <div class="cg-final__cost-big">$0</div>
+            <div class="cg-final__cost-label">platform cost</div>
+            <div class="cg-final__cost-note">+ ~$18&ndash;$22 per<br>merch gift sent</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <a href="./index.html" class="footer__brand" aria-label="Sweaty Mob home">
+          <svg width="32" height="32" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="38" width="80" height="50" rx="25" stroke="currentColor" stroke-width="6" fill="none"/>
+            <rect x="36" y="55" width="4" height="16" rx="2" fill="currentColor"/>
+            <rect x="30" y="61" width="16" height="4" rx="2" fill="currentColor"/>
+            <circle cx="80" cy="56" r="4" fill="var(--color-accent, #e51a1a)"/>
+            <circle cx="90" cy="63" r="4" fill="var(--color-accent, #e51a1a)"/>
+            <polyline points="10,63 25,63 30,63 35,50 40,76 45,55 50,68 55,63 60,63 65,50 70,76 75,55 80,63 95,63 110,63" stroke="var(--color-accent, #e51a1a)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);color:var(--color-dark-text);">Sweaty Mob</span>
+        </a>
+        <p style="font-size:var(--text-sm);color:var(--color-dark-text-muted);margin-top:var(--space-3);max-width:280px;">Turn your screen time into sweat time. Gaming-powered fitness for everyone.</p>
+        <div class="social-links" style="justify-content:flex-start;margin-top:var(--space-3);">
+          <a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="social-link" style="border-color:var(--color-dark-border);color:var(--color-dark-text-muted);font-size:0;padding:var(--space-2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://tiktok.com/@ridewithmo" target="_blank" rel="noopener noreferrer" class="social-link" style="border-color:var(--color-dark-border);color:var(--color-dark-text-muted);font-size:0;padding:var(--space-2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78c.27 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.81a8.23 8.23 0 0 0 3.76.92V6.3c-.01.13-.01.26-.01.39z"/></svg>
+          </a>
+          <a href="https://youtube.com/@ridewithmo" target="_blank" rel="noopener noreferrer" class="social-link" style="border-color:var(--color-dark-border);color:var(--color-dark-text-muted);font-size:0;padding:var(--space-2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.76 31.76 0 0 0 0 12a31.76 31.76 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.76 31.76 0 0 0 24 12a31.76 31.76 0 0 0-.5-5.81zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+          </a>
+          <a href="https://x.com/ridewithmo" target="_blank" rel="noopener noreferrer" class="social-link" style="border-color:var(--color-dark-border);color:var(--color-dark-text-muted);font-size:0;padding:var(--space-2);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Quick Links</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="https://sweatymob.gumroad.com" target="_blank" rel="noopener noreferrer">Gumroad Store</a></li>
+          <li><a href="https://tr.ee/JFV8hjW1U7" target="_blank" rel="noopener noreferrer">Donate</a></li>
+          <li><a href="https://linktr.ee/ridewithmo" target="_blank" rel="noopener noreferrer">Linktree</a></li>
+          <li><a href="./challenges.html">Challenges</a></li>
+          <li><a href="./about.html">About / Business</a></li>
+          <li><a href="./challenge-guide.html">Challenge Guide</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Support</h3>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:info@sweatymob.org">Email Mo</a></li>
+          <li>Cash App: <span style="color:var(--color-accent);">$Ridewithmo</span></li>
+          <li><a href="https://instagram.com/ridewithmo" target="_blank" rel="noopener noreferrer">DM on Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Sweaty Mob LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./app.js" defer></script>
+  <script src="./widget.js" defer></script>
+</body>
+</html>
