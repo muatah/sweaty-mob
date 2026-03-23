@@ -89,15 +89,15 @@
     if (!levels) return "";
     var html = '<div class="challenge-levels">';
     html += '<div class="challenge-levels__row challenge-levels__row--l1">';
-    html += '<span class="challenge-levels__badge challenge-levels__badge--l1">1</span>';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l1">Noob</span>';
     html += '<span class="challenge-levels__text">' + esc(levels.l1) + '</span>';
     html += '</div>';
     html += '<div class="challenge-levels__row challenge-levels__row--l2">';
-    html += '<span class="challenge-levels__badge challenge-levels__badge--l2">2</span>';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l2">Casual</span>';
     html += '<span class="challenge-levels__text">' + esc(levels.l2) + '</span>';
     html += '</div>';
     html += '<div class="challenge-levels__row challenge-levels__row--l3">';
-    html += '<span class="challenge-levels__badge challenge-levels__badge--l3">3</span>';
+    html += '<span class="challenge-levels__badge challenge-levels__badge--l3">Sweaty</span>';
     html += '<span class="challenge-levels__text">' + esc(levels.l3) + '</span>';
     html += '</div>';
     html += '</div>';
@@ -193,7 +193,7 @@
     if (challenge.levels && challenge.levels.l1) {
       var l1 = challenge.levels.l1;
       if (l1.length > 80) l1 = l1.substring(0, 77) + "...";
-      bullets.push("Start easy: " + l1);
+      bullets.push("Noob level: " + l1);
     } else if (challenge.daily && challenge.daily.length > 0) {
       var d1 = challenge.daily[0].replace(/^Day\s*1:?\s*/i, "");
       if (d1.length > 80) d1 = d1.substring(0, 77) + "...";
